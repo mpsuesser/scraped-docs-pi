@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/settings.md
 title: "Settings"
 description: ""
-access_date: 2026-08-03T18:23:47.762Z
-current_date: 2026-08-03T18:23:47.762Z
+access_date: 2026-08-03T18:56:11.769Z
+current_date: 2026-08-03T18:56:11.769Z
 ---
 
 # Settings

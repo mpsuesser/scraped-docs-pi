@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/sessions.md
 title: "Sessions"
 description: ""
-access_date: 2026-08-03T18:23:47.762Z
-current_date: 2026-08-03T18:23:47.762Z
+access_date: 2026-08-03T18:56:11.769Z
+current_date: 2026-08-03T18:56:11.769Z
 ---
 
 # Sessions

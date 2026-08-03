@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/skills.md
 title: "Skills"
 description: ""
-access_date: 2026-08-03T18:23:47.762Z
-current_date: 2026-08-03T18:23:47.762Z
+access_date: 2026-08-03T18:56:11.769Z
+current_date: 2026-08-03T18:56:11.769Z
 ---
 
 > pi can create skills. Ask it to build one for your use case.
