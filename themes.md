@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/themes.md
 title: "Themes"
 description: ""
-access_date: 2026-08-03T17:27:34.911Z
-current_date: 2026-08-03T17:27:34.911Z
+access_date: 2026-08-03T18:13:42.033Z
+current_date: 2026-08-03T18:13:42.033Z
 ---
 
 > pi can create themes. Ask it to build one for your setup.
@@ -303,5 +303,5 @@ echo $COLORTERM  # Should output "truecolor" or "24bit"
 ## Examples
 
 See the built-in themes:
-- [dark.json](../src/modes/interactive/theme/dark.json)
-- [light.json](../src/modes/interactive/theme/light.json)
+- [dark.json](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/src/modes/interactive/theme/dark.json)
+- [light.json](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/src/modes/interactive/theme/light.json)

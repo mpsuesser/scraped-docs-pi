@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/providers.md
 title: "Providers"
 description: ""
-access_date: 2026-08-03T17:27:34.911Z
-current_date: 2026-08-03T17:27:34.911Z
+access_date: 2026-08-03T18:13:42.033Z
+current_date: 2026-08-03T18:13:42.033Z
 ---
 
 # Providers
@@ -306,7 +306,7 @@ See [llama.cpp](llama-cpp.md) for server setup, model directory layout, environm
 
 **Via models.json:** Add Ollama, LM Studio, vLLM, or any provider that speaks a supported API (OpenAI Completions, OpenAI Responses, Anthropic Messages, Google Generative AI). See [models.md](models.md).
 
-**Via extensions:** For providers that need custom API implementations or OAuth flows, create an extension. See [custom-provider.md](custom-provider.md) and [examples/extensions/custom-provider-gitlab-duo](../examples/extensions/custom-provider-gitlab-duo/).
+**Via extensions:** For providers that need custom API implementations or OAuth flows, create an extension. See [custom-provider.md](custom-provider.md) and [examples/extensions/custom-provider-gitlab-duo](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/custom-provider-gitlab-duo).
 
 ## Resolution Order
 

@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/index.md
 title: "Index"
 description: ""
-access_date: 2026-08-03T17:27:34.911Z
-current_date: 2026-08-03T17:27:34.911Z
+access_date: 2026-08-03T18:13:42.033Z
+current_date: 2026-08-03T18:13:42.033Z
 ---
 
 # Pi Documentation

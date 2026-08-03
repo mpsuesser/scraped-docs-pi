@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/compaction.md
 title: "Compaction"
 description: ""
-access_date: 2026-08-03T17:27:34.911Z
-current_date: 2026-08-03T17:27:34.911Z
+access_date: 2026-08-03T18:13:42.033Z
+current_date: 2026-08-03T18:13:42.033Z
 ---
 
 # Compaction & Branch Summarization
@@ -352,7 +352,7 @@ pi.on("session_before_compact", async (event, ctx) => {
 });
 ```
 
-See [custom-compaction.ts](../examples/extensions/custom-compaction.ts) for a complete example using a different model.
+See [custom-compaction.ts](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/custom-compaction.ts) for a complete example using a different model.
 
 ### session_before_tree
 

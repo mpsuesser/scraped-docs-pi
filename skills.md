@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/skills.md
 title: "Skills"
 description: ""
-access_date: 2026-08-03T17:27:34.911Z
-current_date: 2026-08-03T17:27:34.911Z
+access_date: 2026-08-03T18:13:42.033Z
+current_date: 2026-08-03T18:13:42.033Z
 ---
 
 > pi can create skills. Ask it to build one for your use case.
@@ -139,7 +139,7 @@ cd /path/to/skill && npm install
 Use relative paths from the skill directory:
 
 ```markdown
-See [the reference guide](references/REFERENCE.md) for details.
+See [the reference guide](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/references/REFERENCE.md) for details.
 ```
 
 ## Frontmatter

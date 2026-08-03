@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/custom-provider.md
 title: "Custom Provider"
 description: ""
-access_date: 2026-08-03T17:27:34.911Z
-current_date: 2026-08-03T17:27:34.911Z
+access_date: 2026-08-03T18:13:42.033Z
+current_date: 2026-08-03T18:13:42.033Z
 ---
 
 # Custom Providers
@@ -19,8 +19,8 @@ Extensions can register custom model providers via `pi.registerProvider()`. This
 
 See these complete provider examples:
 
-- [`examples/extensions/custom-provider-anthropic/`](../examples/extensions/custom-provider-anthropic/)
-- [`examples/extensions/custom-provider-gitlab-duo/`](../examples/extensions/custom-provider-gitlab-duo/)
+- [`examples/extensions/custom-provider-anthropic/`](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/custom-provider-anthropic)
+- [`examples/extensions/custom-provider-gitlab-duo/`](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/custom-provider-gitlab-duo)
 
 ## Table of Contents
 
