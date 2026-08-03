@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/terminal-setup.md
 title: "Terminal Setup"
 description: ""
-access_date: 2026-08-03T19:02:14.354Z
-current_date: 2026-08-03T19:02:14.354Z
+access_date: 2026-08-03T19:10:08.743Z
+current_date: 2026-08-03T19:10:08.743Z
 ---
 
 # Terminal Setup

@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-08-03T19:02:14.354Z
-current_date: 2026-08-03T19:02:14.354Z
+access_date: 2026-08-03T19:10:08.743Z
+current_date: 2026-08-03T19:10:08.743Z
 ---
 
 > pi can create extensions. Ask it to build one for your use case.
