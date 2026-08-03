@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/json.md
 title: "Json"
 description: ""
-access_date: 2026-08-03T18:56:11.769Z
-current_date: 2026-08-03T18:56:11.769Z
+access_date: 2026-08-03T19:02:14.354Z
+current_date: 2026-08-03T19:02:14.354Z
 ---
 
 # JSON Event Stream Mode
