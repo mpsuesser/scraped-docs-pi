@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/prompt-templates.md
 title: "Prompt Templates"
 description: ""
-access_date: 2026-08-03T18:13:42.033Z
-current_date: 2026-08-03T18:13:42.033Z
+access_date: 2026-08-03T18:23:47.762Z
+current_date: 2026-08-03T18:23:47.762Z
 ---
 
 > pi can create prompt templates. Ask it to build one for your workflow.
