@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/quickstart.md
 title: "Quickstart"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-05T19:51:43.606Z
+current_date: 2026-08-05T19:51:43.606Z
 ---
 
 # Quickstart
@@ -107,6 +107,8 @@ Pi loads:
 
 - `~/.pi/agent/AGENTS.md` for global instructions
 - `AGENTS.md` or `CLAUDE.md` from parent directories and the current directory
+
+If a directory contains `AGENTS.override.md`, Pi loads it instead of `AGENTS.md` or `CLAUDE.md` from that directory.
 
 Restart pi, or run `/reload`, after changing context files.
 

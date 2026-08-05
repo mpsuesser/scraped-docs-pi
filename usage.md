@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/usage.md
 title: "Usage"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-05T19:51:43.606Z
+current_date: 2026-08-05T19:51:43.606Z
 ---
 
 # Using Pi
@@ -110,6 +110,8 @@ Pi loads `AGENTS.md` or `CLAUDE.md` at startup from:
 - `~/.pi/agent/AGENTS.md` for global instructions
 - parent directories, walking up from the current working directory
 - the current directory
+
+If a directory contains `AGENTS.override.md`, Pi loads it instead of `AGENTS.md` or `CLAUDE.md` from that directory. Context files from other directories still layer normally.
 
 Use context files for project conventions, commands, safety rules, and preferences. Disable loading with `--no-context-files` or `-nc`.
 
