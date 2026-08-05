@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/keybindings.md
 title: "Keybindings"
 description: ""
-access_date: 2026-08-05T19:51:43.606Z
-current_date: 2026-08-05T19:51:43.606Z
+access_date: 2026-08-05T21:19:50.052Z
+current_date: 2026-08-05T21:19:50.052Z
 ---
 
 # Keybindings
@@ -92,7 +92,7 @@ The dedicated history actions always change history entries, regardless of the c
 
 ### TUI Fullscreen Viewport
 
-These actions apply when interactive mode uses `--ui-mode fullscreen` and target the primary transcript scroll region. Two-finger trackpad and mouse-wheel input scroll the region under the pointer, falling back to the transcript over the fixed editor/status/footer dock. Clicking an OSC 8 hyperlink opens it in the default handler. Dragging with the primary mouse button selects text and copies it to the clipboard; holding at the transcript's top or bottom edge auto-scrolls into off-screen content.
+These actions apply when interactive mode uses `--tui-mode fullscreen` and target the primary transcript scroll region. Two-finger trackpad and mouse-wheel input scroll the region under the pointer, falling back to the transcript over the fixed editor/status/footer dock. Clicking an OSC 8 hyperlink opens it in the default handler. Dragging with the primary mouse button selects text and copies it to the clipboard; holding at the transcript's top or bottom edge auto-scrolls into off-screen content.
 
 Fullscreen transcript bindings take precedence over editor bindings. The default unmodified navigation keys therefore control the transcript in fullscreen mode, while their `ctrl` variants continue to control the editor. Outside fullscreen mode, both variants control the editor.
 
