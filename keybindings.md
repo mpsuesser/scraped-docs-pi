@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/keybindings.md
 title: "Keybindings"
 description: ""
-access_date: 2026-08-05T21:19:50.052Z
-current_date: 2026-08-05T21:19:50.052Z
+access_date: 2026-08-06T21:58:43.082Z
+current_date: 2026-08-06T21:58:43.082Z
 ---
 
 # Keybindings
@@ -103,12 +103,14 @@ Fullscreen transcript bindings take precedence over editor bindings. The default
 | `pageUp`, `pageDown` | Editor | Transcript |
 | `ctrl+pageUp`, `ctrl+pageDown` | Editor | Editor |
 
-This routing remains configurable through the ordinary action bindings. For example, `"tui.altScreen.pageUp": "ctrl+pageUp"` makes `pageUp` control the editor and `ctrl+pageUp` control the transcript in fullscreen mode. Setting `"tui.altScreen.pageUp": []` disables that transcript shortcut entirely. User bindings replace the defaults for that action.
+This routing remains configurable through the ordinary action bindings. For example, `"tui.altScreen.pageUp": "ctrl+pageUp"` makes `pageUp` control the editor and `ctrl+pageUp` control the transcript in fullscreen mode. Bind `tui.altScreen.halfPageUp` and `tui.altScreen.halfPageDown` for smaller transcript steps while keeping the full-page bindings. Setting `"tui.altScreen.pageUp": []` disables that transcript shortcut entirely. User bindings replace the defaults for that action.
 
 | Keybinding id | Default | Description |
 |--------|---------|-------------|
 | `tui.altScreen.pageUp` | `pageUp` | Scroll the transcript up by one page |
 | `tui.altScreen.pageDown` | `pageDown` | Scroll the transcript down by one page |
+| `tui.altScreen.halfPageUp` | *(none)* | Scroll the transcript up by half a page |
+| `tui.altScreen.halfPageDown` | *(none)* | Scroll the transcript down by half a page |
 | `tui.altScreen.previousPrompt` | `ctrl+shift+up` | Jump to the previous marked message |
 | `tui.altScreen.nextPrompt` | `ctrl+shift+down` | Jump to the next marked message |
 | `tui.altScreen.top` | `home` | Scroll to the beginning of the transcript |
