@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/custom-provider.md
 title: "Custom Provider"
 description: ""
-access_date: 2026-08-03T22:13:13.923Z
-current_date: 2026-08-03T22:13:13.923Z
+access_date: 2026-08-08T07:37:45.304Z
+current_date: 2026-08-08T07:37:45.304Z
 ---
 
 # Custom Providers
@@ -235,7 +235,7 @@ The `api` field determines which streaming implementation is used:
 | `openai-responses` | OpenAI Responses API |
 | `azure-openai-responses` | Azure OpenAI Responses API |
 | `openai-codex-responses` | OpenAI Codex Responses API |
-| `mistral-conversations` | Mistral SDK Conversations/Chat streaming |
+| `mistral-conversations` | Native Mistral Chat Completions streaming |
 | `google-generative-ai` | Google Generative AI API |
 | `google-vertex` | Google Vertex AI API |
 | `bedrock-converse-stream` | Amazon Bedrock Converse API |
