@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/compaction.md
 title: "Compaction"
 description: ""
-access_date: 2026-08-10T06:17:44.421Z
-current_date: 2026-08-10T06:17:44.421Z
+access_date: 2026-08-10T06:49:58.211Z
+current_date: 2026-08-10T06:49:58.211Z
 ---
 
 # Compaction & Branch Summarization
@@ -50,7 +50,7 @@ You can also trigger manually with `/compact [instructions]`, where optional ins
 2. **Extract messages**: Collect messages from the previous kept boundary (or session start) up to the cut point
 3. **Generate summary**: Call LLM to summarize with structured format, passing the previous summary as iterative context when present
 4. **Append entry**: Save `CompactionEntry` with summary and `firstKeptEntryId`
-5. **Reload**: Session rebuilds context, using summary + messages from `firstKeptEntryId` onwards
+5. **Rebuilds context**: Session rebuilds the context for the next request, using summary + messages from `firstKeptEntryId` onwards
 
 ```
 Before compaction:
