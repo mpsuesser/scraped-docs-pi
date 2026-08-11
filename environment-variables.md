@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/environment-variables.md
 title: "Environment Variables"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-11T07:22:38.094Z
+current_date: 2026-08-11T07:22:38.094Z
 ---
 
 # Environment Variables
@@ -11,14 +11,19 @@ current_date: 2026-08-03T19:45:45.326Z
 Pi uses environment variables in three ways:
 
 - Variables such as `PI_OFFLINE` configure the Pi process.
-- Pi sets `PI_CODING_AGENT` so child processes can detect that they run inside Pi.
+- Pi sets process markers so child processes can identify Pi as the launching agent.
 - Commands run by the LLM-callable bash tool receive `PI_*` variables describing the current session.
 
 Provider API-key variables are documented separately in [Providers](providers.md#environment-variables-or-auth-file).
 
 ## Process Marker
 
-The CLI and RPC entry points set `PI_CODING_AGENT=true`. Child processes inherit it and can use it to detect that they run inside Pi. It is not session-specific and is not set automatically when Pi is embedded through the SDK.
+The CLI and RPC entry points set two process markers:
+
+- `AI_AGENT=pi` is a generic marker that lets tooling identify Pi as the agent that launched the process.
+- `PI_CODING_AGENT=true` is Pi-specific and lets child processes detect that they run inside Pi.
+
+Child processes inherit both markers. They are not session-specific and are not set automatically when Pi is embedded through the SDK.
 
 ## Bash Tool Session Environment
 
