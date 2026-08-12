@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/rpc.md
 title: "Rpc"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-12T21:47:35.233Z
+current_date: 2026-08-12T21:47:35.233Z
 ---
 
 # RPC Mode
@@ -927,6 +927,14 @@ Emitted during streaming of assistant messages. Contains a delta event without a
 ```json
 {
   "type": "message_update",
+  "usage": {
+    "input": 100,
+    "output": 1,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "totalTokens": 101,
+    "cost": {"input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0, "total": 0}
+  },
   "assistantMessageEvent": {
     "type": "text_delta",
     "contentIndex": 0,
@@ -951,11 +959,14 @@ The `assistantMessageEvent` field contains one of these delta types:
 
 Example streaming a text response:
 ```json
-{"type":"message_update","assistantMessageEvent":{"type":"text_start","contentIndex":0}}
-{"type":"message_update","assistantMessageEvent":{"type":"text_delta","contentIndex":0,"delta":"Hello"}}
-{"type":"message_update","assistantMessageEvent":{"type":"text_delta","contentIndex":0,"delta":" world"}}
-{"type":"message_update","assistantMessageEvent":{"type":"text_end","contentIndex":0,"content":"Hello world"}}
+{"type":"message_update","usage":{...},"assistantMessageEvent":{"type":"text_start","contentIndex":0}}
+{"type":"message_update","usage":{...},"assistantMessageEvent":{"type":"text_delta","contentIndex":0,"delta":"Hello"}}
+{"type":"message_update","usage":{...},"assistantMessageEvent":{"type":"text_delta","contentIndex":0,"delta":" world"}}
+{"type":"message_update","usage":{...},"assistantMessageEvent":{"type":"text_end","contentIndex":0,"content":"Hello world"}}
 ```
+
+The top-level `usage` field contains the latest cumulative provider-reported usage. It may remain
+zero until completion when a provider does not report usage during streaming.
 
 `message_update` intentionally omits the former cumulative `message` field and
 `assistantMessageEvent.partial`. Clients that need a live partial message must assemble it
