@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/themes.md
 title: "Themes"
 description: ""
-access_date: 2026-08-11T09:05:09.619Z
-current_date: 2026-08-11T09:05:09.619Z
+access_date: 2026-08-12T14:33:16.030Z
+current_date: 2026-08-12T14:33:16.030Z
 ---
 
 > pi can create themes. Ask it to build one for your setup.
@@ -46,6 +46,23 @@ Select a theme via `/settings` or in `settings.json`:
 ```
 
 On first run, pi detects your terminal background and defaults to `dark` or `light`.
+
+### Initial Theme
+
+Start an interactive run with a theme without changing the saved setting:
+
+```bash
+pi --use-theme light
+```
+
+To follow terminal appearance, use `lightTheme/darkTheme` syntax:
+
+```bash
+pi --use-theme light/dark
+```
+
+The CLI value is the initial theme for that run. Choosing another theme later in `/settings` applies it immediately
+and saves it normally.
 
 ## Creating a Custom Theme
 
