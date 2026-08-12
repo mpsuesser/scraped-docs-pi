@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/compaction.md
 title: "Compaction"
 description: ""
-access_date: 2026-08-10T06:49:58.211Z
-current_date: 2026-08-10T06:49:58.211Z
+access_date: 2026-08-12T13:25:54.053Z
+current_date: 2026-08-12T13:25:54.053Z
 ---
 
 # Compaction & Branch Summarization
@@ -56,7 +56,7 @@ You can also trigger manually with `/compact [instructions]`, where optional ins
 Before compaction:
 
   entry:  0     1     2     3      4     5     6      7      8     9
-        ┌─────┬─────┬─────┬─────┬──────┬─────┬──── ─┬──────┬─────┬─────┐
+        ┌─────┬─────┬─────┬──────┬─────┬─────┬──────┬──────┬─────┬─────┐
         │ hdr │ usr │ ass │ tool │ usr │ ass │ tool │ tool │ ass │ tool│
         └─────┴─────┴─────┴──────┴─────┴─────┴──────┴──────┴─────┴─────┘
                 └────────┬───────┘ └──────────────┬──────────────┘
@@ -67,7 +67,7 @@ Before compaction:
 After compaction (new entry appended):
 
   entry:  0     1     2     3      4     5     6      7      8     9     10
-        ┌─────┬─────┬─────┬─────┬──────┬─────┬──── ─┬──────┬─────┬─────┬─────┐
+        ┌─────┬─────┬─────┬──────┬─────┬─────┬──────┬──────┬─────┬─────┬─────┐
         │ hdr │ usr │ ass │ tool │ usr │ ass │ tool │ tool │ ass │ tool│ cmp │
         └─────┴─────┴─────┴──────┴─────┴─────┴──────┴──────┴─────┴─────┴─────┘
                └──────────┬──────┘ └──────────────────────┬───────────────────┘
