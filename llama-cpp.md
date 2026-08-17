@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/llama-cpp.md
 title: "Llama Cpp"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-17T10:17:35.346Z
+current_date: 2026-08-17T10:17:35.346Z
 ---
 
 # llama.cpp
@@ -60,6 +60,8 @@ Start Pi and configure the provider:
 ```
 
 Enter the router URL and optional API key. The default URL is `http://127.0.0.1:8080`.
+
+If you start the router with `--no-models-autoload`, `/login llama.cpp` only stores the connection. Run `/llama` to load a model, then `/model` to select the loaded model for the current session.
 
 Environment variables can configure the same values without `/login`:
 
