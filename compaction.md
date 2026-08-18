@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/compaction.md
 title: "Compaction"
 description: ""
-access_date: 2026-08-17T11:13:43.062Z
-current_date: 2026-08-17T11:13:43.062Z
+access_date: 2026-08-18T12:54:02.043Z
+current_date: 2026-08-18T12:54:02.043Z
 ---
 
 # Compaction & Branch Summarization
@@ -289,7 +289,9 @@ pi.on("session_before_compact", async (event, ctx) => {
   const { preparation, branchEntries, customInstructions, reason, willRetry, signal } = event;
 
   // preparation.messagesToSummarize - messages to summarize
+  // preparation.sourceMessages - optional active-context history prefix, including any previous summary
   // preparation.turnPrefixMessages - split turn prefix (if isSplitTurn)
+  // preparation.turnPrefixSourceMessages - optional active-context prefix through the split turn
   // preparation.previousSummary - previous compaction summary
   // preparation.fileOps - extracted file operations
   // preparation.tokensBefore - context tokens before compaction
