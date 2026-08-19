@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/json.md
 title: "Json"
 description: ""
-access_date: 2026-08-12T21:47:35.233Z
-current_date: 2026-08-12T21:47:35.233Z
+access_date: 2026-08-19T10:33:27.778Z
+current_date: 2026-08-19T10:33:27.778Z
 ---
 
 # JSON Event Stream Mode
@@ -23,12 +23,16 @@ except that streaming message updates omit cumulative snapshots:
 ```typescript
 type WithoutPartial<T> = T extends { partial: unknown } ? Omit<T, "partial"> : T;
 
+type JsonAssistantMessageEvent<T> = T extends { type: "toolcall_start"; partial: unknown }
+  ? WithoutPartial<T> & { id: string; toolName: string }
+  : WithoutPartial<T>;
+
 type JsonAgentSessionEvent =
   | Exclude<AgentSessionEvent, { type: "message_update" }>
   | {
       type: "message_update";
       usage: Usage;
-      assistantMessageEvent: WithoutPartial<AssistantMessageEvent>;
+      assistantMessageEvent: JsonAssistantMessageEvent<AssistantMessageEvent>;
     };
 ```
 
@@ -92,7 +96,8 @@ Followed by events as they occur:
 `assistantMessageEvent.partial` to keep stream size linear. The top-level `usage` field contains
 the latest cumulative provider-reported usage and may remain zero when a provider only reports
 usage at completion. Use `contentIndex` and `delta` to assemble live text, thinking, or tool-call
-arguments if needed. `message_end` contains the final authoritative message.
+arguments if needed. A `toolcall_start` event also includes the constant-sized `id` and `toolName`
+fields. `message_end` contains the final authoritative message.
 
 ## Example
 
