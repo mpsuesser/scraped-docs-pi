@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/packages.md
 title: "Packages"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-23T07:46:00.127Z
+current_date: 2026-08-23T07:46:00.127Z
 ---
 
 > pi can help you create pi packages. Ask it to bundle your extensions, skills, prompt templates, or themes.
@@ -138,7 +138,7 @@ Add a `pi` manifest to `package.json` or use conventional directories. Include t
 }
 ```
 
-Paths are relative to the package root. Arrays support glob patterns and `!exclusions`.
+Paths are relative to the package root. Arrays support glob patterns and `!exclusions`. Positive manifest globs discover visible paths in lexical order. List dot-prefixed paths directly. If a glob would need to continue through a symlink, list the symlinked resource root directly.
 
 ### Gallery Metadata
 
