@@ -2,13 +2,13 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/windows.md
 title: "Windows"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-08-24T10:42:48.979Z
+current_date: 2026-08-24T10:42:48.979Z
 ---
 
 # Windows Setup
 
-Pi requires a bash shell on Windows. Checked locations (in order):
+Pi uses Git Bash by default on Windows. Checked locations (in order):
 
 1. Custom path from `~/.pi/agent/settings.json`
 2. Git Bash (`C:\Program Files\Git\bin\bash.exe`)
@@ -16,7 +16,29 @@ Pi requires a bash shell on Windows. Checked locations (in order):
 
 For most users, [Git for Windows](https://git-scm.com/download/win) is sufficient.
 
-## Custom Shell Path
+## PowerShell Tool
+
+The optional `powershell` tool runs commands through `pwsh.exe` when available, otherwise Windows PowerShell. It starts PowerShell with `-NoProfile -NonInteractive -ExecutionPolicy Bypass`. Administrator-enforced execution policies can still take precedence.
+
+Use `defaultTools` to replace the model-facing `bash` tool:
+
+```json
+{
+  "defaultTools": ["read", "powershell", "edit", "write"]
+}
+```
+
+Or enable both while comparing behavior:
+
+```json
+{
+  "defaultTools": ["read", "bash", "powershell", "edit", "write"]
+}
+```
+
+The `!` and `!!` editor commands still use Bash.
+
+## Custom Bash Path
 
 ```json
 {
