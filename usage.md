@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/usage.md
 title: "Usage"
 description: ""
-access_date: 2026-08-24T10:42:48.979Z
-current_date: 2026-08-24T10:42:48.979Z
+access_date: 2026-08-26T14:27:01.436Z
+current_date: 2026-08-26T14:27:01.436Z
 ---
 
 # Using Pi
@@ -46,9 +46,10 @@ Type `/` in the editor to open command completion. Extensions can register custo
 |---------|-------------|
 | `/login`, `/logout` | Manage OAuth or API-key credentials |
 | [`/llama`](llama-cpp.md) | Download, load, and unload llama.cpp router models |
-| `/model` | Switch models |
+| `/model` | Switch models; Ctrl+S in the picker saves the startup default |
+| `/thinking` | Switch thinking level; Ctrl+S in the picker saves the startup default |
 | `/scoped-models` | Enable/disable models for Ctrl+P cycling |
-| `/settings` | Thinking level, theme, message delivery, transport |
+| `/settings` | Theme, message delivery, transport, and other preferences |
 | `/resume` | Pick from previous sessions |
 | `/new` | Start a new session |
 | `/name <name>` | Set session display name |

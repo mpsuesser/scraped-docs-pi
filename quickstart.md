@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/quickstart.md
 title: "Quickstart"
 description: ""
-access_date: 2026-08-05T19:51:43.606Z
-current_date: 2026-08-05T19:51:43.606Z
+access_date: 2026-08-26T14:27:01.436Z
+current_date: 2026-08-26T14:27:01.436Z
 ---
 
 # Quickstart
@@ -137,7 +137,7 @@ The command output is sent to the model. Use `!!command` to run a command withou
 
 ### Switch models
 
-Use `/model` or Ctrl+L to choose a model. Use Shift+Tab to cycle thinking level. Use Ctrl+P / Shift+Ctrl+P to cycle through scoped models.
+Use `/model` or Ctrl+L to choose a model for the current session. Press Ctrl+S in the model picker to save the highlighted model as the startup default. Use `/thinking` to choose a thinking level for the current session, or Ctrl+S in that picker to save the startup default thinking level. Use Shift+Tab to cycle thinking level. Use Ctrl+P / Shift+Ctrl+P to cycle through scoped models.
 
 ### Continue later
 
