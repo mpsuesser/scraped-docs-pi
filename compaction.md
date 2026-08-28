@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/compaction.md
 title: "Compaction"
 description: ""
-access_date: 2026-08-19T08:01:24.912Z
-current_date: 2026-08-19T08:01:24.912Z
+access_date: 2026-08-28T15:37:55.761Z
+current_date: 2026-08-28T15:37:55.761Z
 ---
 
 # Compaction & Branch Summarization
@@ -41,6 +41,8 @@ contextTokens > contextWindow - reserveTokens
 ```
 
 By default, `reserveTokens` is 16384 tokens (configurable in `~/.pi/agent/settings.json` or `<project-dir>/.pi/settings.json`). This leaves room for the LLM's response.
+
+During a multi-turn agent run, Pi checks this threshold after tools finish and their results are appended, before starting the next assistant response. If the threshold is crossed, Pi compacts inside the same agent run and resumes with the summary and retained messages. It skips this between-turn check when the completed tool batch terminates the run and no queued message requires another response. Pi also checks the threshold before a new user prompt and after a low-level agent run ends.
 
 You can also trigger manually with `/compact [instructions]`, where optional instructions focus the summary.
 
