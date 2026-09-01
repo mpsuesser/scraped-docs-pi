@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/terminal-setup.md
 title: "Terminal Setup"
 description: ""
-access_date: 2026-08-26T16:38:12.761Z
-current_date: 2026-08-26T16:38:12.761Z
+access_date: 2026-09-01T09:26:06.805Z
+current_date: 2026-09-01T09:26:06.805Z
 ---
 
 # Terminal Setup
@@ -135,6 +135,21 @@ Add to `keybindings.json`:
   "command": "workbench.action.terminal.sendSequence",
   "args": { "text": "\u001b[13;2u" },
   "when": "terminalFocus"
+}
+```
+
+## Zed (Integrated Terminal)
+
+Add these key bindings to your Zed `keymap.json`:
+
+```json
+{
+  "context": "Terminal",
+  "bindings": {
+    "shift-enter": ["terminal::SendText", "\u001b[13;2u"],
+    "ctrl--": ["terminal::SendText", "\u001b[45;5u"],
+    "ctrl-alt-]": ["terminal::SendText", "\u001b[93;7u"]
+  }
 }
 ```
 
