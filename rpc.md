@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/rpc.md
 title: "Rpc"
 description: ""
-access_date: 2026-08-25T13:35:42.895Z
-current_date: 2026-08-25T13:35:42.895Z
+access_date: 2026-09-03T11:24:40.517Z
+current_date: 2026-09-03T11:24:40.517Z
 ---
 
 # RPC Mode
@@ -131,7 +131,7 @@ See [set_follow_up_mode](#set_follow_up_mode) for controlling how follow-up mess
 
 #### abort
 
-Abort the current agent operation.
+Abort the current operation and wait for the session to become idle before responding.
 
 ```json
 {"type": "abort"}

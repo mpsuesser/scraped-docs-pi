@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/sdk.md
 title: "Sdk"
 description: ""
-access_date: 2026-08-24T10:42:48.979Z
-current_date: 2026-08-24T10:42:48.979Z
+access_date: 2026-09-03T11:24:40.517Z
+current_date: 2026-09-03T11:24:40.517Z
 ---
 
 > pi can help you use the SDK. Ask it to build an integration for your use case.
@@ -794,6 +794,11 @@ if (modelFallbackMessage) {
 // Open specific file
 const { session: opened } = await createAgentSession({
   sessionManager: SessionManager.open("/path/to/session.jsonl"),
+});
+
+// Resume a session kept outside the filesystem, e.g. in a database
+const { session: restored } = await createAgentSession({
+  sessionManager: SessionManager.inMemory(process.cwd(), { id: sessionId }, entries),
 });
 
 // List sessions
