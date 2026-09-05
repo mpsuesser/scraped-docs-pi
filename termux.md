@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/termux.md
 title: "Termux"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-09-05T23:15:20.716Z
+current_date: 2026-09-05T23:15:20.716Z
 ---
 
 # Termux (Android) Setup
@@ -104,7 +104,6 @@ termux-camera-photo out.jpg   # Take photo
 ## Limitations
 
 - **No image clipboard**: Termux clipboard API only supports text
-- **No native binaries**: Some optional native dependencies (like the clipboard module) are unavailable on Android ARM64 and are skipped during installation
 - **Storage access**: To access files in `/storage/emulated/0` (Downloads, etc.), run `termux-setup-storage` once to grant permissions
 
 ## Troubleshooting
