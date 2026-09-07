@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/sdk.md
 title: "Sdk"
 description: ""
-access_date: 2026-09-03T11:24:40.517Z
-current_date: 2026-09-03T11:24:40.517Z
+access_date: 2026-09-07T13:39:30.036Z
+current_date: 2026-09-07T13:39:30.036Z
 ---
 
 > pi can help you use the SDK. Ask it to build an integration for your use case.
@@ -118,6 +118,8 @@ interface AgentSession {
   dispose(): void;
 }
 ```
+
+`session.navigateTree()` rejects while an agent response, manual or automatic compaction, or another tree navigation is active, even with `summarize: false`. It does not queue navigation or return `{ cancelled: true }` for these conflicts. Wait for the active operation to finish (for example, with `await session.waitForIdle()`) and retry. Rejection leaves the active branch unchanged.
 
 Session replacement APIs such as new-session, resume, fork, and import live on `AgentSessionRuntime`, not on `AgentSession`.
 
