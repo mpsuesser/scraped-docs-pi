@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-09-07T13:39:30.036Z
-current_date: 2026-09-07T13:39:30.036Z
+access_date: 2026-09-10T19:26:53.156Z
+current_date: 2026-09-10T19:26:53.156Z
 ---
 
 > pi can create extensions. Ask it to build one for your use case.
@@ -2397,6 +2397,10 @@ You do not need to return provider-specific tool references or mark the loader a
 - **Anthropic**
   - **Models:** Sonnet, Opus, Fable version 4.5 or newer (without Haiku)
   - **Native representation:** Deferred definitions use `defer_loading`; the load point uses `tool_reference` content.
+- **Fireworks Messages API**
+  - **Native representation:** Deferred definitions use `defer_loading`; the load point uses `tool_reference` content.
+  - **Loader names:** Use `ToolSearch` or `tool_search` for prefix deferral. Other loader names still work, but Fireworks includes the loaded schemas in the initial tool prefix, losing the cache benefit.
+  - This does not change API routing: Fireworks GLM models and Kimi K3 use Chat Completions, not Messages.
 - **OpenAI**
   - **Models:** `gpt-5.4` and newer family
   - **Native representation:** Pi adds completed client `tool_search_call` and `tool_search_output` items at the load point.
