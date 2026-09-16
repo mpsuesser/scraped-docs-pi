@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/sdk.md
 title: "Sdk"
 description: ""
-access_date: 2026-09-07T13:39:30.036Z
-current_date: 2026-09-07T13:39:30.036Z
+access_date: 2026-09-16T14:01:12.593Z
+current_date: 2026-09-16T14:01:12.593Z
 ---
 
 > pi can help you use the SDK. Ask it to build an integration for your use case.
@@ -254,8 +254,8 @@ const state = session.agent.state;
 // state.messages: AgentMessage[] - conversation history
 // state.model: Model - current model
 // state.thinkingLevel: ThinkingLevel - current thinking level
-// state.systemPrompt: string - system prompt
-// state.tools: AgentTool[] - available tools
+// state.systemPrompt: string - read-only, replayed from the transcript's system messages
+// state.tools: AgentTool[] - executable tools; changes are declared to the model before the next request
 // state.streamingMessage?: AgentMessage - current partial assistant message
 // state.errorMessage?: string - latest assistant error
 

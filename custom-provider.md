@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/custom-provider.md
 title: "Custom Provider"
 description: ""
-access_date: 2026-09-07T13:39:30.036Z
-current_date: 2026-09-07T13:39:30.036Z
+access_date: 2026-09-16T14:01:12.593Z
+current_date: 2026-09-16T14:01:12.593Z
 ---
 
 # Custom Providers
@@ -414,25 +414,31 @@ For providers with non-standard APIs, implement `streamSimple`. Study the existi
 
 ### Stream Pattern
 
-All providers follow the same pattern:
+All providers follow the same pattern. The context is a normalized transcript: the system prompt and tool declarations live in its system messages, so read them with `getCurrentSystemPrompt(context.messages)` and `getCurrentTools(context.messages)` rather than expecting `context.systemPrompt` or `context.tools`. Models that accept system messages mid-conversation can send them in place; otherwise call `collapseSystemMessages(context)` first to fold later system messages into the leading one.
 
 ```typescript
 import {
   type AssistantMessage,
   type AssistantMessageEventStream,
-  type Context,
   type Model,
   type SimpleStreamOptions,
+  type TranscriptContext,
   calculateCost,
+  collapseSystemMessages,
   createAssistantMessageEventStream,
+  getCurrentSystemPrompt,
+  getCurrentTools,
 } from "@earendil-works/pi-ai";
 
 function streamMyProvider(
   model: Model<any>,
-  context: Context,
+  context: TranscriptContext,
   options?: SimpleStreamOptions
 ): AssistantMessageEventStream {
   const stream = createAssistantMessageEventStream();
+  const transcript = collapseSystemMessages(context);
+  const systemPrompt = getCurrentSystemPrompt(transcript.messages);
+  const tools = getCurrentTools(transcript.messages);
 
   (async () => {
     // Initialize output message
@@ -676,10 +682,10 @@ interface ProviderConfig {
   /** API type for streaming. Required at provider or model level when defining models. */
   api?: Api;
 
-  /** Custom streaming implementation for non-standard APIs. */
+  /** Custom streaming implementation for non-standard APIs. Receives a normalized transcript. */
   streamSimple?: (
     model: Model<Api>,
-    context: Context,
+    context: TranscriptContext,
     options?: SimpleStreamOptions
   ) => AssistantMessageEventStream;
 
