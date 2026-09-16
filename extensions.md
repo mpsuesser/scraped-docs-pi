@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-09-16T14:01:12.593Z
-current_date: 2026-09-16T14:01:12.593Z
+access_date: 2026-09-16T16:23:22.666Z
+current_date: 2026-09-16T16:23:22.666Z
 ---
 
 > pi can create extensions. Ask it to build one for your use case.
@@ -916,6 +916,8 @@ pi.on("user_bash", (event, ctx) => {
   return { result: { output: "...", exitCode: 0, cancelled: false, truncated: false } };
 });
 ```
+
+Returning `undefined` continues to the next handler, then local execution if none handles the event. A valid result stops propagation: `operations` executes the command through the supplied backend, while `result` records the completed command without executing it.
 
 ### Input Events
 
