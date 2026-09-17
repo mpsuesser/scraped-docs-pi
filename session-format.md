@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/session-format.md
 title: "Session Format"
 description: ""
-access_date: 2026-09-16T21:42:08.293Z
-current_date: 2026-09-16T21:42:08.293Z
+access_date: 2026-09-17T18:09:47.904Z
+current_date: 2026-09-17T18:09:47.904Z
 ---
 
 # Session File Format
@@ -90,7 +90,6 @@ interface SystemMessage {
   content: string | TextContent[];
   toolsAdded?: Tool[];
   toolsRemoved?: Array<{ name: string }>;
-  replace?: boolean;  // discard earlier system messages; this one is the complete prompt and tool state
   timestamp: number;  // Unix ms
 }
 
@@ -234,7 +233,7 @@ For sessions with a parent (created via `/fork`, `/clone`, or `newSession({ pare
 
 ### SessionMessageEntry
 
-A message in the conversation. The `message` field contains an `AgentMessage`. System messages carry the prompt and tool loadout: the first request of a session persists one with every prompt section and tool declaration, and later changes persist as system messages that patch `sections` by name (`null` removes one) and list `toolsAdded`/`toolsRemoved`. Replaying them in order yields the current prompt and tools; there is no separate prompt state entry. A `before_agent_start` handler that forces the whole prompt persists a system message with `replace: true` holding the forced text in `content` and the full tool set, and leaving the forced prompt persists another one with the structured sections.
+A message in the conversation. The `message` field contains an `AgentMessage`. System messages carry the prompt and tool loadout: the first request of a session persists one with every prompt section and tool declaration, and later changes persist as system messages that patch `sections` by name (`null` removes one) and list `toolsAdded`/`toolsRemoved`. Replaying them in order yields the current prompt and tools; there is no separate prompt state entry.
 
 ```json
 {"type":"message","id":"a0b1c2d3","parentId":null,"timestamp":"2024-12-03T14:00:00.000Z","message":{"role":"system","content":"","sections":{"preamble":"You are an expert coding assistant...","tools":"<tools>\n- read: ...\n</tools>","cwd":"/project"},"toolsAdded":[{"name":"read","description":"...","parameters":{}}],"timestamp":1733234400000}}
