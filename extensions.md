@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-09-17T18:09:47.904Z
-current_date: 2026-09-17T18:09:47.904Z
+access_date: 2026-09-17T19:45:59.996Z
+current_date: 2026-09-17T19:45:59.996Z
 ---
 
 > pi can create extensions. Ask it to build one for your use case.
@@ -1379,7 +1379,16 @@ export default function (pi: ExtensionAPI) {
 
 ### pi.on(event, handler)
 
-Subscribe to events. See [Events](#events) for event types and return values.
+Subscribe to events. Returns an unsubscribe function that removes only that registration. See [Events](#events) for event types and return values.
+
+```typescript
+const unsubscribe = pi.on("agent_end", async (event) => {
+  unsubscribe();
+  await updateIntegration(event.messages);
+});
+```
+
+Handlers run in extension load order, then registration order within each extension. Adding or removing a handler does not affect a dispatch already in progress.
 
 ### pi.registerTool(definition)
 
