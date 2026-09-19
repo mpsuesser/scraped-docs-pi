@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-09-17T19:45:59.996Z
-current_date: 2026-09-17T19:45:59.996Z
+access_date: 2026-09-19T19:26:01.654Z
+current_date: 2026-09-19T19:26:01.654Z
 ---
 
 > pi can create extensions. Ask it to build one for your use case.
@@ -745,6 +745,25 @@ pi.on("after_provider_response", (event, ctx) => {
 ```
 
 Header availability depends on provider and transport. Providers that abstract HTTP responses may not expose headers.
+
+#### cache_warming_decision
+
+Fired before each prompt-cache refresh with pi's decision filled in. The event carries only pi's cost estimates; use `ctx.model`, `ctx.isIdle()`, and `ctx.getContextUsage()` for everything else.
+
+```typescript
+pi.on("cache_warming_decision", (event, ctx) => {
+  // event.warmCost: price of this refresh
+  // event.missCost: extra price of the next request if the entry is lost
+  // event.continuationProbability: pi's estimate that a request arrives in time
+  // event.action: "warm" | "stop", pi's decision
+
+  if (ctx.model?.provider === "my-provider") {
+    return { action: "stop" };
+  }
+});
+```
+
+Return `{ action: "warm" }` or `{ action: "stop" }` to override; the last handler that returns an action wins. `"stop"` ends warming until the next real request.
 
 ### Model Events
 

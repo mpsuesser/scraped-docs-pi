@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/custom-provider.md
 title: "Custom Provider"
 description: ""
-access_date: 2026-09-16T14:01:12.593Z
-current_date: 2026-09-16T14:01:12.593Z
+access_date: 2026-09-19T19:26:01.654Z
+current_date: 2026-09-19T19:26:01.654Z
 ---
 
 # Custom Providers
@@ -740,6 +740,9 @@ interface ProviderModelConfig {
     cacheRead: number;
     cacheWrite: number;
   };
+
+  /** Best-effort prompt cache lifetime in seconds per retention tier. Unset disables cache warming. */
+  promptCache?: { short?: number; long?: number };
 
   /** Maximum context window size in tokens. */
   contextWindow: number;
