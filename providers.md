@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/providers.md
 title: "Providers"
 description: ""
-access_date: 2026-09-07T13:39:30.036Z
-current_date: 2026-09-07T13:39:30.036Z
+access_date: 2026-09-19T17:25:01.836Z
+current_date: 2026-09-19T17:25:01.836Z
 ---
 
 # Providers
@@ -61,7 +61,7 @@ Anthropic subscription auth is active for Claude Pro/Max accounts. Third-party h
 
 ### Radius
 
-Radius is a dynamic `pi-messages` gateway. `/login radius` stores OAuth tokens in `auth.json`; the gateway catalog is refreshed independently and cached in `models-store.json`. Custom Radius gateways can be declared in `models.json` with `"oauth": "radius"` and a gateway `baseUrl`.
+Radius is a `pi-messages` gateway. Pi ships the public Radius model catalog for immediate and offline model lookup, then overlays it with the effective gateway catalog after authentication. `/login radius` stores OAuth tokens in `auth.json`; refreshed catalogs are cached in `models-store.json`. Custom Radius gateways can be declared in `models.json` with `"oauth": "radius"` and a gateway `baseUrl`; they do not inherit the public `radius.pi.dev` catalog.
 
 ## API Keys
 
