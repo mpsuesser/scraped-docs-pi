@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/usage.md
 title: "Usage"
 description: ""
-access_date: 2026-08-27T16:50:08.948Z
-current_date: 2026-08-27T16:50:08.948Z
+access_date: 2026-09-19T16:00:19.870Z
+current_date: 2026-09-19T16:00:19.870Z
 ---
 
 # Using Pi
@@ -63,6 +63,7 @@ Type `/` in the editor to open command completion. Extensions can register custo
 | `/export [file]` | Export session to HTML or JSONL |
 | `/import <file>` | Import and resume a session from a JSONL file |
 | `/share` | Upload as private GitHub gist with shareable HTML link |
+| `/bug [description]` | Report a bug to the Pi developers; see [Sessions](sessions.md#reporting-bugs) |
 | `/reload` | Reload keybindings, extensions, skills, prompts, themes, and context files |
 | `/hotkeys` | Show all keyboard shortcuts |
 | `/changelog` | Display version history |
