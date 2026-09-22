@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/environment-variables.md
 title: "Environment Variables"
 description: ""
-access_date: 2026-09-19T16:00:19.870Z
-current_date: 2026-09-19T16:00:19.870Z
+access_date: 2026-09-22T14:50:05.312Z
+current_date: 2026-09-22T14:50:05.312Z
 ---
 
 # Environment Variables
@@ -105,4 +105,4 @@ These variables are read by Pi itself:
 
 Provider credentials such as `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, and cloud-provider configuration are listed in [Providers](providers.md#environment-variables-or-auth-file).
 
-`PI_SERVER_DIR` and `PI_SERVER_ID` apply only to the source-only [experimental remote harness](development.md#experimental-remote-harness), not distributed builds.
+`PI_SERVER_DIR` and `PI_SERVER_ID` apply only to the source-only [experimental remote harness](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/development.md#experimental-remote-harness), not distributed builds.

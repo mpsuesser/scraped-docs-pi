@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/index.md
 title: "Index"
 description: ""
-access_date: 2026-08-03T19:45:45.326Z
-current_date: 2026-08-03T19:45:45.326Z
+access_date: 2026-09-22T14:50:05.312Z
+current_date: 2026-09-22T14:50:05.312Z
 ---
 
 # Pi Documentation
@@ -89,4 +89,4 @@ For the full first-run flow, see [Quickstart](quickstart.md).
 
 ## Development
 
-- [Development](development.md) - local setup, project structure, and debugging.
+- [Development](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/development.md) - local setup, project structure, and debugging.
