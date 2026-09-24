@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/tui.md
 title: "Tui"
 description: ""
-access_date: 2026-09-22T14:50:05.312Z
-current_date: 2026-09-22T14:50:05.312Z
+access_date: 2026-09-24T12:53:01.904Z
+current_date: 2026-09-24T12:53:01.904Z
 ---
 
 # Terminal UI
@@ -86,6 +86,24 @@ See [`overlay-qa-tests.ts`](https://github.com/earendil-works/pi/blob/main/packa
 ## Apply themes correctly
 
 Use the theme passed to the extension or component callback. Theme helpers produce ANSI-styled strings for semantic colors such as accent, muted text, success, warnings, errors, tool output, and Markdown.
+
+Use `theme.style()` to combine foreground and background colors with text attributes:
+
+```typescript
+return new Text(
+  theme.style("Done!", {
+    fg: "success",
+    bg: "toolSuccessBg",
+    bold: true,
+  }),
+  0,
+  0,
+);
+```
+
+A style color can be a semantic theme token or a concrete `Color`. Foreground tokens are accepted as `fg` and background tokens as `bg`; to use a token's color in the other position, pass its concrete color, for example `{ fg: theme.colors.userMessageBg }`. Access concrete colors through `theme.colors` and use utilities such as `mixColors()` from `@earendil-works/pi-tui` when color math is needed. Tokens that a theme sets to the terminal default render with the terminal's own color; `theme.colors` reports the color the terminal announced for them, or a guess when it did not. Use `theme.appearance` (`"dark"` or `"light"`) to decide, for example, whether to lighten or darken a color. Pi converts the result to truecolor or 256-color output based on terminal capabilities. Theme tokens are converted once per theme; compute concrete colors outside the render path when possible.
+
+The existing `theme.fg()` and `theme.bg()` helpers remain available for applying one semantic color.
 
 Do not permanently store strings with theme colors unless `invalidate()` rebuilds them. A theme change clears render caches, but it cannot remove old ANSI colors embedded in application state.
 
