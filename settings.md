@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/settings.md
 title: "Settings"
 description: ""
-access_date: 2026-09-22T14:50:05.312Z
-current_date: 2026-09-22T14:50:05.312Z
+access_date: 2026-09-26T11:35:05.698Z
+current_date: 2026-09-26T11:35:05.698Z
 ---
 
 # Settings Reference
@@ -81,7 +81,7 @@ See [Compaction Reference](compaction.md) for trigger, summarization, and valida
 
 | Setting | Type | Default | Description |
 |---|---|---|---|
-| `theme` | string | Detected | Built-in or custom theme name. |
+| `theme` | string | `"system"` | Built-in or custom theme name. `system` derives colors from the terminal theme. |
 | `quietStartup` | boolean | `false` | Hide the startup header. |
 | `tuiMode` | `"regular" \| "fullscreen"` | `"regular"` | Interactive terminal UI mode. |
 | `fullscreenExitOutput` | `"transcript" \| "resume-hint"` | `"transcript"` | Output printed when fullscreen mode exits. |
