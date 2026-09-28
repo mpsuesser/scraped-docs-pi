@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-09-23T14:10:45.438Z
-current_date: 2026-09-23T14:10:45.438Z
+access_date: 2026-09-28T21:33:04.677Z
+current_date: 2026-09-28T21:33:04.677Z
 ---
 
 # Extensions
@@ -88,6 +88,7 @@ Automatic retries, recovery, compaction, or queued work can continue afterward.
 | Persist non-context session data | `pi.appendEntry()` |
 | Change active tools, model, or thinking level | Session control methods on `pi` |
 | Add a model provider | `pi.registerProvider()` |
+| Route each request to a model | [`pi.registerVirtualModel()`](virtual-models.md) |
 | Add terminal rendering | Renderer registration and `ctx.ui` |
 | Communicate with another extension | `pi.events` |
 
