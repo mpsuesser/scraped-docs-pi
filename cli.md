@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/cli.md
 title: "Cli"
 description: ""
-access_date: 2026-09-29T07:34:49.520Z
-current_date: 2026-09-29T07:34:49.520Z
+access_date: 2026-09-29T09:00:39.445Z
+current_date: 2026-09-29T09:00:39.445Z
 ---
 
 <a id="cli-and-modes-reference"></a>
@@ -178,9 +178,9 @@ pi --extension ./review.ts
 See [Configuration](configuration.md) for conventional directories and project trust, [Settings](settings.md#resources) for configured paths, and [Pi Packages](packages.md) for package sources.
 
 - `-e`, `--extension <path>`<br>
-  Loads an extension file or directory and is repeatable.
+  Loads an extension file or directory, or a built-in extension such as `builtin:mcp`, and is repeatable.
 - `-ne`, `--no-extensions`<br>
-  Disables discovered and configured extensions. Explicit `-e` paths still load.
+  Disables discovered, configured, and built-in extensions. Explicit `-e` paths still load, so `pi -ne -e builtin:mcp` keeps only the built-in MCP support.
 - `--skill <path>`<br>
   Loads a skill file or directory and is repeatable.
 - `-ns`, `--no-skills`<br>

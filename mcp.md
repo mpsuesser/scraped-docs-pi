@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/mcp.md
 title: "Mcp"
 description: ""
-access_date: 2026-09-29T07:34:49.520Z
-current_date: 2026-09-29T07:34:49.520Z
+access_date: 2026-09-29T09:00:39.445Z
+current_date: 2026-09-29T09:00:39.445Z
 ---
 
 # MCP Servers
@@ -189,7 +189,7 @@ Extensions can add servers for the current session with `pi.registerMcpServer(na
 
 ## Other MCP extensions
 
-An installed extension that registers the `/mcp` command, such as `pi-mcp-adapter`, replaces the built-in MCP support: pi then neither reads `mcp.json` in sessions nor connects servers, and `/mcp` belongs to that extension. Remove the extension to use the built-in support. Likewise, an extension that registers a tool named `codemode` or `tool_search` replaces the built-in tool of that name. `pi mcp` shell commands always use the built-in support.
+An installed extension that registers the `/mcp` command, such as `pi-mcp-adapter`, replaces the built-in MCP support: pi then neither reads `mcp.json` in sessions nor connects servers, and `/mcp` belongs to that extension. Remove the extension to use the built-in support. To turn off the built-in support without installing another extension, disable `mcp` under Built-in in `pi config`, or set `"extensions": ["-builtin:mcp"]` in [settings](settings.md#resources); `pi mcp` shell commands still work. Likewise, an extension that registers a tool named `codemode` or `tool_search` replaces the built-in tool of that name. `pi mcp` shell commands always use the built-in support.
 
 ## SDK
 
