@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/windows.md
 title: "Windows"
 description: ""
-access_date: 2026-09-22T14:50:05.312Z
-current_date: 2026-09-22T14:50:05.312Z
+access_date: 2026-09-29T12:04:33.510Z
+current_date: 2026-09-29T12:04:33.510Z
 ---
 
 # Run Pi on Windows
@@ -49,6 +49,8 @@ To replace the model-facing `bash` tool with `powershell`, add this to `~/.pi/ag
   "defaultTools": ["read", "powershell", "edit", "write"]
 }
 ```
+
+`["-bash", "+powershell"]` does the same while keeping any other default tools you configured.
 
 Restart Pi, then ask it to run a harmless PowerShell command. The `!` and `!!` editor commands continue to use Bash. The `powershell` tool is available only when Pi runs as a native Windows process.
 
