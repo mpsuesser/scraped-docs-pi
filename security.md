@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/security.md
 title: "Security"
 description: ""
-access_date: 2026-09-22T14:58:57.358Z
-current_date: 2026-09-22T14:58:57.358Z
+access_date: 2026-09-29T07:34:49.520Z
+current_date: 2026-09-29T07:34:49.520Z
 ---
 
 # Run Pi safely
@@ -45,6 +45,7 @@ Project trust does not limit what tool calls can access or affect. After Pi star
 Pi requires a project-trust decision when it finds any of these resources from the current working directory:
 
 - `.pi/settings.json`
+- `.pi/mcp.json`
 - `.pi/extensions`, `.pi/skills`, `.pi/prompts`, or `.pi/themes`
 - `.pi/SYSTEM.md` or `.pi/APPEND_SYSTEM.md`
 - project `.agents/skills` in the current directory or an ancestor directory
@@ -54,6 +55,7 @@ A bare `.pi` directory does not require project trust.
 Granting project trust allows Pi to load:
 
 - project settings
+- project MCP servers from `.pi/mcp.json`
 - extensions, skills, prompt templates, themes, and system-prompt files under `.pi`
 - missing packages configured through project settings
 - project-local and project-package extensions
