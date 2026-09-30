@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/mcp.md
 title: "Mcp"
 description: ""
-access_date: 2026-09-30T11:55:19.990Z
-current_date: 2026-09-30T11:55:19.990Z
+access_date: 2026-09-30T12:02:26.424Z
+current_date: 2026-09-30T12:02:26.424Z
 ---
 
 # MCP Servers
@@ -142,6 +142,18 @@ OAuth applies to HTTP servers without an `Authorization` header. For a server th
 The redirect URI must match the registered URI. `callbackPort` uses `http://127.0.0.1:<port>/callback`. To use another URI, set `callbackUrl`; it must use HTTP on `localhost`, `127.0.0.1`, or `[::1]`. Pi sends it exactly as written. When `callbackUrl` omits a port, Pi uses `callbackPort` or a free port and adds it to the URI, as allowed for loopback redirects by RFC 8252. `clientSecret` is optional and can use an environment variable or command.
 
 Set `scope` to a space-separated list for servers that do not advertise their required scopes. Otherwise, Pi requests the advertised scopes. Later scope requests are added to the configured value.
+
+Pi registers as `pi`. Some servers only accept registrations from known clients. Set `clientName` to send another name:
+
+```json
+{
+  "mcpServers": {
+    "figma": { "url": "https://mcp.figma.com/mcp", "oauth": { "clientName": "Claude Code" } }
+  }
+}
+```
+
+The name is only sent when Pi registers a client. To register again under a new name, sign out first.
 
 ## Control tool exposure
 
