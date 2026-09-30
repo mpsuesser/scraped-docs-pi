@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/mcp.md
 title: "Mcp"
 description: ""
-access_date: 2026-09-30T16:50:43.921Z
-current_date: 2026-09-30T16:50:43.921Z
+access_date: 2026-09-30T22:02:15.391Z
+current_date: 2026-09-30T22:02:15.391Z
 ---
 
 # MCP Servers
@@ -154,6 +154,21 @@ Pi registers as `pi`. Some servers only accept registrations from known clients.
 ```
 
 The name is only sent when Pi registers a client. To register again under a new name, sign out first.
+
+Pi finds the authorization server through the server's protected resource metadata (RFC 9728) and checks that the authorization server's metadata names the expected issuer (RFC 8414). Some servers advertise the wrong authorization server or none, so sign-in opens a page that does not exist. Set `authServerMetadataUrl` to the metadata document of the right authorization server:
+
+```json
+{
+  "mcpServers": {
+    "example": {
+      "url": "https://mcp.example.com/mcp",
+      "oauth": { "authServerMetadataUrl": "https://example.okta.com/.well-known/openid-configuration" }
+    }
+  }
+}
+```
+
+Pi uses that document instead of discovery and trusts it as configured, so only point it at a document you trust. The URL must use HTTPS, except on `localhost`, `127.0.0.1`, or `[::1]`.
 
 ## Control tool exposure
 
