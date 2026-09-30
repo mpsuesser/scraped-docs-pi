@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/providers.md
 title: "Providers"
 description: ""
-access_date: 2026-09-29T12:35:49.871Z
-current_date: 2026-09-29T12:35:49.871Z
+access_date: 2026-09-30T19:00:53.323Z
+current_date: 2026-09-30T19:00:53.323Z
 ---
 
 # Provider Authentication
@@ -75,6 +75,8 @@ This table covers providers with a single primary API-key variable. Providers th
 | Xiaomi MiMo Token Plan (Singapore) | `XIAOMI_TOKEN_PLAN_SGP_API_KEY` |
 
 Anthropic also recognizes `ANTHROPIC_OAUTH_TOKEN` as an API credential and `ANTHROPIC_AUTH_TOKEN` as bearer authentication.
+
+With no key or token set, Anthropic uses workload identity federation when `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID` and `ANTHROPIC_IDENTITY_TOKEN_FILE` are set: the Anthropic SDK exchanges the identity token for a short-lived access token and refreshes it itself (re-reading the identity token file, so keep that file fresh for long sessions). `ANTHROPIC_SERVICE_ACCOUNT_ID` and `ANTHROPIC_WORKSPACE_ID` are passed through when set.
 
 ## Load an API key from a command
 
