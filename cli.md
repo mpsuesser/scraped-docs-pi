@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/cli.md
 title: "Cli"
 description: ""
-access_date: 2026-09-30T15:25:03.600Z
-current_date: 2026-09-30T15:25:03.600Z
+access_date: 2026-10-01T08:33:04.010Z
+current_date: 2026-10-01T08:33:04.010Z
 ---
 
 <a id="cli-and-modes-reference"></a>
@@ -69,7 +69,7 @@ pi --model sonnet:high
 See [Choose a Model](models.md) for model selection and [Provider Authentication](providers.md) for credentials.
 
 - `--provider <name>`<br>
-  Restricts `--model` lookup to one provider.
+  Restricts `--model` lookup to one provider. It requires `--model`.
 - `--model <pattern>`<br>
   Selects by exact ID or fuzzy ID/name match. It accepts `provider/id` and an optional `:<thinking>` suffix.
 - `--api-key <key>`<br>
