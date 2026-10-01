@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/cli.md
 title: "Cli"
 description: ""
-access_date: 2026-10-01T15:23:48.928Z
-current_date: 2026-10-01T15:23:48.928Z
+access_date: 2026-10-01T15:37:04.531Z
+current_date: 2026-10-01T15:37:04.531Z
 ---
 
 <a id="cli-and-modes-reference"></a>
@@ -237,7 +237,7 @@ See [Configuration](configuration.md) for saved configuration, [Security](securi
 - `--append-system-prompt <text|path>`<br>
   Appends text or an existing file to the system prompt and is repeatable.
 - `--tui-mode <mode>`<br>
-  Uses `regular` or `fullscreen` terminal mode.
+  Uses `fullscreen` (default) or `regular` terminal mode.
 - `--verbose`<br>
   Shows verbose interactive startup information, overriding `quietStartup`.
 - `-a`, `--approve`<br>

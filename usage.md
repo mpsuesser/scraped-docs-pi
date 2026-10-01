@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/usage.md
 title: "Usage"
 description: ""
-access_date: 2026-09-22T14:58:57.358Z
-current_date: 2026-09-22T14:58:57.358Z
+access_date: 2026-10-01T15:37:04.531Z
+current_date: 2026-10-01T15:37:04.531Z
 ---
 
 # Use Pi in the terminal
@@ -91,7 +91,7 @@ Use `/share` to upload the session and get a viewer link. With Radius authentica
 
 ## Adjust the terminal
 
-Regular mode uses the terminal's normal scrollback. Fullscreen mode keeps the editor and status area fixed while the transcript scrolls within the terminal window. Choose a mode through `/settings` or `--tui-mode`.
+Fullscreen mode, the default, keeps the editor and status area fixed while the transcript scrolls within the terminal window. Regular mode uses the terminal's normal scrollback. Choose a mode through `/settings` or `--tui-mode`.
 
 Terminal support for mouse input, keyboard shortcuts, and inline images varies. See [Terminal Setup](terminal-setup.md) for platform-specific configuration and [Keybindings](keybindings.md) for every configurable shortcut. Run `/hotkeys` to inspect the shortcuts active in your current session.
 
