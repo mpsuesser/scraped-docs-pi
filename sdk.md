@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/sdk.md
 title: "Sdk"
 description: ""
-access_date: 2026-09-30T11:55:19.990Z
-current_date: 2026-09-30T11:55:19.990Z
+access_date: 2026-10-01T15:23:48.928Z
+current_date: 2026-10-01T15:23:48.928Z
 ---
 
 # SDK
@@ -148,7 +148,7 @@ See the focused examples for [models](https://github.com/earendil-works/pi/blob/
 
 ## Resources
 
-- [Choose a Model](models.md) covers model selection and compatible endpoints; [Provider Authentication](providers.md) covers credentials and cloud-provider setup.
+- [Choose a Model](models.md) covers model selection and compatible endpoints; [Providers](providers.md) covers credentials and provider-specific setup.
 - [Configuration](configuration.md) explains normal discovery and settings; [Settings](settings.md) lists every setting.
 - [Sessions and Context](sessions.md) explains session behavior; [Session Format](session-format.md) defines persisted entries; [Message Types](message-types.md) defines shared transcript values.
 - [Extensions](extensions.md), [Skills](skills.md), and [Prompt Templates](prompt-templates.md) document resources supplied through a `ResourceLoader`.

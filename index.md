@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/index.md
 title: "Index"
 description: ""
-access_date: 2026-09-22T14:58:57.358Z
-current_date: 2026-09-22T14:58:57.358Z
+access_date: 2026-10-01T15:23:48.928Z
+current_date: 2026-10-01T15:23:48.928Z
 ---
 
 # Pi
@@ -38,7 +38,7 @@ Use the [Quickstart customization chooser](quickstart.md#choose-how-to-customize
 
 ## Find reference and setup information
 
-Use the reference pages to look up [CLI options](cli.md), [settings](settings.md), [provider authentication](providers.md), [keybindings](keybindings.md), and [environment variables](environment-variables.md).
+Use the reference pages to look up [CLI options](cli.md), [settings](settings.md), [providers](providers.md), [keybindings](keybindings.md), and [environment variables](environment-variables.md).
 
 For platform-specific help, see [Terminal Setup](terminal-setup.md), [Windows](windows.md), [tmux](tmux.md), [Termux on Android](termux.md), or [Containerization](containerization.md).
 
