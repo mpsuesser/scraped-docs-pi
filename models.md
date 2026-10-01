@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models.md
 title: "Models"
 description: ""
-access_date: 2026-09-29T14:35:41.113Z
-current_date: 2026-09-29T14:35:41.113Z
+access_date: 2026-10-01T14:55:08.498Z
+current_date: 2026-10-01T14:55:08.498Z
 ---
 
 # Choose a Model
@@ -142,6 +142,25 @@ return result.answers;
 When the service reports token counts, as all System One services do, `result.usage` carries them with their cost. Pi adds the usage of a script's classifier calls to the `codemode` tool result, so it counts toward the session cost in the footer and `/session`. The cost uses the model's catalog price; models without one, such as TypeSafe's direct `jev-latest`, report tokens at no cost.
 
 Extensions call classifiers through `ctx.modelRegistry.classify()`, without codemode. [Virtual models](virtual-models.md#route-requests) can use them to route requests; see the `jev-router.ts` example.
+
+## Use image models
+
+Image models generate images from a prompt and optional input images. Pi lists OpenRouter's image models, such as `google/gemini-2.5-flash-image` and `black-forest-labs/flux.2-pro`, under the `openrouter` provider; they use the same `OPENROUTER_API_KEY` or `/login` credential as its chat models.
+
+Like classifier models, image models do not appear in `/model`; the model reaches them through the [`codemode`](cli.md#enable-codemode) tool. Scripts list them with `models.getAvailableOfType("image")` and call `models.generateImages(model, { input })`. The result's `output` holds base64 image blocks, which `image()` attaches to the `codemode` result so the model sees them:
+
+```js
+const painter = await models.getModelOfType("image", "openrouter", "google/gemini-2.5-flash-image");
+const result = await models.generateImages(painter, {
+  input: [{ type: "text", text: "A red fox in the snow, watercolor" }],
+});
+if (result.stopReason !== "stop") return result.errorMessage;
+for (const block of result.output) if (block.type === "image") image(block);
+```
+
+`input` can also contain `{ type: "image", data, mimeType }` blocks to edit or use as references. Pi adds the usage of a script's image calls to the `codemode` tool result, like classifier calls. Generated images are not saved to disk.
+
+Extensions generate images through `ctx.modelRegistry.generateImages()`, without codemode.
 
 ## Add a custom provider
 
