@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/cli.md
 title: "Cli"
 description: ""
-access_date: 2026-10-01T16:27:48.974Z
-current_date: 2026-10-01T16:27:48.974Z
+access_date: 2026-10-02T19:13:03.544Z
+current_date: 2026-10-02T19:13:03.544Z
 ---
 
 <a id="cli-and-modes-reference"></a>
@@ -275,6 +275,8 @@ Running `pi update` without a target updates Pi itself.
 | Update Pi and all installed packages | `pi update --all` |
 
 Add `--force` to reinstall Pi when the selected update includes Pi.
+
+`pi update` cannot update Pi when another package manager provides it, such as Nix. Update Pi with that package manager, for example `nix profile upgrade pi`. Package and model catalog updates still work.
 
 ### Aliases and command options
 
