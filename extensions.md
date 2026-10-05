@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-10-03T12:30:27.860Z
-current_date: 2026-10-03T12:30:27.860Z
+access_date: 2026-10-05T22:18:36.245Z
+current_date: 2026-10-05T22:18:36.245Z
 ---
 
 # Extensions
@@ -185,7 +185,7 @@ pi.on("tool_call", async (event, ctx) => {
 });
 ```
 
-A tool that orchestrates other tools can adjust what the model sees while it is active with `prepareLoadout(loadout)`. It runs whenever the active tools change and receives the declared tools, the callable tools, and every registered tool with its exposure and namespace. It returns replacement `descriptions` for declared tools (including its own) and `hiddenDeclarations`: active tools whose declarations requests leave out while they stay active and callable. `codemode` uses only this hook, `exposure`, and `ctx.executeTool()`, so another tool can implement the same behavior under a different name.
+A tool that orchestrates other tools can adjust what the model sees while it is active with `prepareLoadout(loadout)`. It runs whenever the active tools change and receives the declared tools, the callable tools, and every registered tool with its exposure, namespace, and prompt guidelines. It returns replacement `descriptions` for declared tools (including its own) and `hiddenDeclarations`: active tools whose declarations requests leave out while they stay active and callable. The default system prompt leaves hidden tools out of its tool list and rules, and names no tool in the skills hint when the file reader is hidden, so the orchestrating tool should present their guidelines itself. `codemode` uses only this hook, `exposure`, and `ctx.executeTool()`, so another tool can implement the same behavior under a different name.
 
 ### Activate tools dynamically
 

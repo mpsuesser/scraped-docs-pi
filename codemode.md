@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-10-05T15:57:13.167Z
-current_date: 2026-10-05T15:57:13.167Z
+access_date: 2026-10-05T22:18:36.245Z
+current_date: 2026-10-05T22:18:36.245Z
 ---
 
 # Codemode
@@ -57,7 +57,7 @@ A call that fails, is blocked, or gets invalid arguments rejects with an `Error`
 
 The `codemode` description lists tools with their TypeScript declarations, grouped by namespace (for example one MCP server). Tools with `deferred` exposure, which includes MCP tools with the default `codemode` exposure, are not listed, so the description stays the same while MCP servers connect. Listed declarations share a budget of 3000 estimated tokens (`codemode.inlineBudget` in [settings](settings.md#tools)). Scripts find the other tools with `searchTools()`, `describeTool()`, `describeNamespace()`, or by filtering `ALL_TOOLS`.
 
-While `codemode` is active, `codemode.mode` in [settings](settings.md#tools) decides how the other tools are presented. With `on` (default) declared tools stay declared, and their descriptions say how to call them from scripts. With `only` they are hidden from the model and listed in the `codemode` description instead, so the model calls them through scripts.
+While `codemode` is active, `codemode.mode` in [settings](settings.md#tools) decides how the other tools are presented. With `on` (default) declared tools stay declared, and their descriptions say how to call them from scripts. With `only` they are hidden from the model and listed in the `codemode` description instead, so the model calls them through scripts. Tool declarations in the `codemode` description, `describeTool()`, and `ALL_TOOLS` carry the tools' prompt guidelines, since the system prompt rules only cover declared tools.
 
 ## Store values
 
