@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/json.md
 title: "Json"
 description: ""
-access_date: 2026-09-22T14:50:05.312Z
-current_date: 2026-09-22T14:50:05.312Z
+access_date: 2026-10-06T20:39:29.489Z
+current_date: 2026-10-06T20:39:29.489Z
 ---
 
 # JSON Event Stream
@@ -112,7 +112,7 @@ The top-level `usage` is the latest cumulative provider-reported usage for the a
 |---|---|---|
 | `tool_execution_start` | `toolCallId`, `toolName`, `args` | Tool execution started. |
 | `tool_execution_update` | `toolCallId`, `toolName`, `args`, `partialResult` | The tool reported a partial result. |
-| `tool_execution_end` | `toolCallId`, `toolName`, `result`, `isError` | Tool execution finished. |
+| `tool_execution_end` | `toolCallId`, `toolName`, `result`, `isError`, `durationMs` | Tool execution finished. `durationMs` is how long the tool's `execute()` took, measured with a monotonic clock; absent when the tool did not run. |
 
 Use `toolCallId` to correlate the lifecycle. `partialResult` is the latest partial result supplied by the tool. Whether it replaces or extends an earlier update depends on that tool's result contract.
 
