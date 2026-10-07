@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-10-07T00:07:24.747Z
-current_date: 2026-10-07T00:07:24.747Z
+access_date: 2026-10-07T12:06:27.470Z
+current_date: 2026-10-07T12:06:27.470Z
 ---
 
 # Codemode
@@ -67,7 +67,7 @@ The store is for small state such as IDs, cursors, or summaries. One value may h
 
 ## Models
 
-`models` reaches the model catalog and runs non-LLM models with the session's credentials: classifiers, which answer typed questions about JSON state, and image models, which generate images. Chat models are listed but cannot be run from scripts. Which classifier and image models exist is described in [Use classifier models](models.md#use-classifier-models) and [Use image models](models.md#use-image-models).
+`models` reaches the model catalog and runs non-LLM models with the session's credentials: classifiers, which answer typed questions about JSON state and, for some models, images, and image models, which generate images. Chat models are listed but cannot be run from scripts. Which classifier and image models exist is described in [Use classifier models](models.md#use-classifier-models) and [Use image models](models.md#use-image-models).
 
 ```ts
 type ModelType = "chat" | "image" | "classifier";
@@ -108,6 +108,8 @@ Model IDs differ between providers, for example `typesafe/jev-latest` and `openr
 interface ClassifierContext {
   /** The data to classify. */
   state: Record<string, unknown>;
+  /** Images judged together with `state`. Only models whose `input` includes "image" accept them. */
+  images?: { type: "image"; data: string; mimeType: string }[];
   /** Questions by ID. One call answers all of them. */
   questions: Record<string, ClassifierQuestion>;
 }
@@ -169,6 +171,24 @@ return results.map((result, i) =>
     ? { message: messages[i], sentiment: result.answers.sentiment.choice, urgency: result.answers.urgency.score }
     : { message: messages[i], error: result.errorMessage },
 );
+```
+
+Classifiers whose `input` includes `"image"` also judge images. `tools.read()` returns an image file as an image block that `images` accepts. Other classifiers return an error result when `images` is not empty.
+
+```js
+const luna = await models.getModelOfType("classifier", "openai", "gpt-6-luna");
+const photo = await tools.read({ path: "screenshot.png" });
+const result = await models.classify(luna, {
+  state: { task: "Settings page redesign" },
+  images: [photo],
+  questions: {
+    broken: {
+      type: "bool",
+      instructions: "Does the screenshot show a broken layout?",
+      criteria: { true: "Overlapping, cut-off, or misaligned elements", false: "Clean layout" },
+    },
+  },
+});
 ```
 
 ### Generate images
