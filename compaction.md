@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/compaction.md
 title: "Compaction"
 description: ""
-access_date: 2026-09-22T14:50:05.312Z
-current_date: 2026-09-22T14:50:05.312Z
+access_date: 2026-10-11T18:48:22.265Z
+current_date: 2026-10-11T18:48:22.265Z
 ---
 
 # Compaction Reference
@@ -287,13 +287,14 @@ Before summarization, messages are serialized to text via [`serializeConversatio
 
 ```
 [User]: What they said
-[Assistant thinking]: Internal reasoning
 [Assistant]: Response text
 [Assistant tool calls]: read(path="foo.ts"); edit(path="bar.ts", ...)
 [Tool result]: Output from tool
 ```
 
 This prevents the model from treating it as a conversation to continue.
+
+Thinking blocks are omitted. Providers return summaries of the real reasoning, and replayed thinking is often not part of the model's live context, so including it could make the summarization request larger than the context it summarizes.
 
 Tool results are truncated to 2000 characters during serialization. Content beyond that limit is replaced with a marker indicating how many characters were truncated. This keeps summarization requests within reasonable token budgets, since tool results (especially from `read` and `bash`) are typically the largest contributors to context size.
 
@@ -354,7 +355,6 @@ pi.on("session_before_compact", async (event, ctx) => {
   );
   // Returns:
   // [User]: message text
-  // [Assistant thinking]: thinking content
   // [Assistant]: response text
   // [Assistant tool calls]: read(path="..."); bash(command="...")
   // [Tool result]: output text
