@@ -2,13 +2,15 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/settings.md
 title: "Settings"
 description: ""
-access_date: 2026-10-07T23:23:02.519Z
-current_date: 2026-10-07T23:23:02.519Z
+access_date: 2026-10-11T14:04:30.008Z
+current_date: 2026-10-11T14:04:30.008Z
 ---
 
 # Settings Reference
 
 This reference lists user-configurable settings, their types, defaults, and purposes. Project settings override agent-directory settings. Resource lists are combined. See [Configuration](configuration.md) for file locations and trust behavior.
+
+Add `"$schema": "https://pi.dev/schemas/settings.schema.json"` to `settings.json` for editor validation and completion.
 
 ## Model and thinking
 

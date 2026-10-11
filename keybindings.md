@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/keybindings.md
 title: "Keybindings"
 description: ""
-access_date: 2026-10-05T15:57:13.167Z
-current_date: 2026-10-05T15:57:13.167Z
+access_date: 2026-10-11T14:04:30.008Z
+current_date: 2026-10-11T14:04:30.008Z
 ---
 
 # Keybindings Reference
@@ -20,6 +20,7 @@ Map each action identifier to one key or a list of keys:
 
 ```json
 {
+  "$schema": "https://pi.dev/schemas/keybindings.schema.json",
   "app.session.new": "ctrl+shift+n",
   "app.session.tree": ["ctrl+shift+t", "alt+shift+t"]
 }

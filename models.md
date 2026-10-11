@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models.md
 title: "Models"
 description: ""
-access_date: 2026-10-07T12:06:27.470Z
-current_date: 2026-10-07T12:06:27.470Z
+access_date: 2026-10-11T14:04:30.008Z
+current_date: 2026-10-11T14:04:30.008Z
 ---
 
 # Choose a Model
@@ -56,6 +56,7 @@ Use [`models.json`](configuration.md#agent-directory) when an endpoint speaks an
 
 ```json
 {
+  "$schema": "https://pi.dev/schemas/models.schema.json",
   "providers": {
     "ollama": {
       "baseUrl": "http://localhost:11434/v1",
