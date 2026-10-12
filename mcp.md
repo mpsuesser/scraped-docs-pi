@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/mcp.md
 title: "Mcp"
 description: ""
-access_date: 2026-10-05T15:57:13.167Z
-current_date: 2026-10-05T15:57:13.167Z
+access_date: 2026-10-12T07:59:33.094Z
+current_date: 2026-10-12T07:59:33.094Z
 ---
 
 # MCP Servers
@@ -273,7 +273,7 @@ Changes to enabled state or exposure apply only to the current session. A file-c
 
 An installed extension that registers `/mcp`, such as `pi-mcp-adapter`, replaces the built-in MCP support for sessions. Pi then does not read `mcp.json` or connect its servers in a session, and `/mcp` belongs to the extension. Remove the extension to restore the built-in behavior. To disable built-in MCP support without a replacement, disable `mcp` under Built-in in `pi config`, or set `"extensions": ["-builtin:mcp"]` in [settings](settings.md#resources). `--no-mcp` disables it for one run.
 
-An extension that registers `codemode` or `tool_search` similarly replaces the built-in tool with that name. Shell-level `pi mcp` commands always use the built-in implementation.
+An extension that registers `codemode` or `tool_search` similarly replaces the built-in tool with that name. Pi activates the replacement for MCP servers and waits for the servers its calls need only when it declares [`reachesTools`](extensions.md#tool-exposure). Shell-level `pi mcp` commands always use the built-in implementation.
 
 ### Use MCP from the SDK
 
