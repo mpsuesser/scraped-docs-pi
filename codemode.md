@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-10-07T12:06:27.470Z
-current_date: 2026-10-07T12:06:27.470Z
+access_date: 2026-10-12T17:26:41.129Z
+current_date: 2026-10-12T17:26:41.129Z
 ---
 
 # Codemode
@@ -14,7 +14,7 @@ The `codemode` tool lets the model write a JavaScript script that calls pi's oth
 
 The tool input is raw JavaScript source, not JSON and not a markdown code fence. It runs as the body of an async function in a QuickJS sandbox, so top-level `await` and `return` work. The sandbox has no Node APIs, file system, network, or timers; scripts reach the outside world only through tools and `models`.
 
-A script may start with an options line:
+A script may start with an options line. It must be the first line; an options line anywhere else fails the call before the script runs:
 
 ```js
 // @options: {"max_output_tokens": 2000, "timeout_ms": 60000}
