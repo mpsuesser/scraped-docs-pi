@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-10-12T17:26:41.129Z
-current_date: 2026-10-12T17:26:41.129Z
+access_date: 2026-10-13T18:20:35.964Z
+current_date: 2026-10-13T18:20:35.964Z
 ---
 
 # Codemode
@@ -232,5 +232,7 @@ for (const block of result.output) {
 ## Limits
 
 - A script's VM has 256 MB of memory. Running out throws `InternalError: out of memory`; filter or aggregate large data instead of accumulating it.
+- On Bun, stopping a script or reaching its deadline ends the call promptly, but a built-in that does not poll QuickJS's interrupt handler can keep computing in its worker until it returns.
+- At most two codemode workers may be alive across all sessions in one pi process. A cancelled worker occupies its slot until it exits. At capacity, new scripts fail immediately without starting another worker; retry after an existing worker exits.
 - A script that waits on a promise that can never settle (no tool call pending) fails immediately, since there are no timers.
 - Scripts cannot start other `codemode` scripts.

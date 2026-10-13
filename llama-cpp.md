@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/llama-cpp.md
 title: "Llama Cpp"
 description: ""
-access_date: 2026-10-06T09:09:05.621Z
-current_date: 2026-10-06T09:09:05.621Z
+access_date: 2026-10-13T18:20:35.964Z
+current_date: 2026-10-13T18:20:35.964Z
 ---
 
 # Local Models with llama.cpp
@@ -49,7 +49,7 @@ A single-file model can sit directly in the model directory. Put multimodal and 
     └── large-model-Q4_K_M-00003-of-00003.gguf
 ```
 
-Restart the router after manually adding files. For per-model context sizes and other options, use [llama.cpp model presets](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md#model-presets).
+Restart the router after manually adding files. For per-model context sizes and other options, use [llama.cpp model presets](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md#model-presets). For settings tuned to a specific NVIDIA GPU and model, see [Run Pi with NVIDIA RTX and llama.cpp](nvidia-rtx-llama-cpp.md).
 
 ## Configure Pi
 
