@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/windows.md
 title: "Windows"
 description: ""
-access_date: 2026-09-29T12:04:33.510Z
-current_date: 2026-09-29T12:04:33.510Z
+access_date: 2026-10-19T19:58:30.066Z
+current_date: 2026-10-19T19:58:30.066Z
 ---
 
 # Run Pi on Windows
@@ -27,8 +27,9 @@ For most native Windows users, installing [Git for Windows](https://git-scm.com/
 Pi resolves Bash in this order:
 
 1. `shellPath` from `~/.pi/agent/settings.json`
-2. Git Bash under `Program Files` or `Program Files (x86)`
-3. `bash.exe` on `PATH`, including Cygwin, MSYS2, or legacy WSL Bash
+2. Git Bash at `%ProgramFiles%\Git\bin\bash.exe`
+3. Git Bash at `%ProgramFiles(x86)%\Git\bin\bash.exe`
+4. `bash.exe` on `PATH`, including Cygwin, MSYS2, or legacy WSL Bash
 
 Start Pi and enter this command to verify the shell:
 
@@ -41,6 +42,13 @@ If Pi cannot find Bash, it reports the locations it checked. Install Git for Win
 ## Let the model use PowerShell
 
 The optional `powershell` tool runs commands through `pwsh.exe` when available, then falls back to Windows PowerShell. It starts PowerShell with `-NoProfile -NonInteractive -ExecutionPolicy Bypass`. Administrator-enforced execution policies can still take precedence.
+
+PowerShell discovery checks these locations in order:
+
+1. `pwsh.exe` on `PATH`
+2. `%ProgramFiles%\PowerShell\7\pwsh.exe`
+3. `powershell.exe` on `PATH`
+4. `%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe`
 
 To replace the model-facing `bash` tool with `powershell`, add this to `~/.pi/agent/settings.json`:
 
@@ -55,6 +63,12 @@ To replace the model-facing `bash` tool with `powershell`, add this to `~/.pi/ag
 Restart Pi, then ask it to run a harmless PowerShell command. The `!` and `!!` editor commands continue to use Bash. The `powershell` tool is available only when Pi runs as a native Windows process.
 
 See [Settings](settings.md#tools) for other tool combinations.
+
+## WSL
+
+WSL path conversion on Windows and extra Git branch polling in WSL recognize `/mnt/<drive>`, not custom mount roots.
+
+When using the legacy WSL `bash.exe` launcher from Windows, Pi sends commands over stdin to avoid command-line quoting problems.
 
 ## Use a custom Bash executable
 
