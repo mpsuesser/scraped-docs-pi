@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/environment-variables.md
 title: "Environment Variables"
 description: ""
-access_date: 2026-10-12T17:26:41.129Z
-current_date: 2026-10-12T17:26:41.129Z
+access_date: 2026-10-20T18:53:23.538Z
+current_date: 2026-10-20T18:53:23.538Z
 ---
 
 # Environment Variables
@@ -92,6 +92,7 @@ These variables are read by Pi itself:
 | `PI_OFFLINE` | Disable automatic network activity, including model catalog refreshes |
 | `PI_SKIP_VERSION_CHECK` | Disable the `pi.dev` latest-version request |
 | `PI_TELEMETRY` | Override install/update telemetry and provider attribution headers: `1`/`true`/`yes` or `0`/`false`/`no` |
+| `PI_CODEMODE_MAX_WORKERS` | Maximum codemode workers alive at once across all sessions in the process; default `2`. Each worker's script may use up to 256 MB. Raise it when one process runs several sessions, such as in-process subagents. Further scripts wait for a free worker. See [Codemode](codemode.md) |
 | `PI_CACHE_RETENTION` | Set to `long` for extended provider prompt caching where supported |
 | `PI_SHARE_VIEWER_URL` | Override the base URL used by `/share` |
 | `PI_RADIUS_GATEWAY` | Override the Radius gateway origin used by `/bug` uploads |
