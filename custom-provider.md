@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/custom-provider.md
 title: "Custom Provider"
 description: ""
-access_date: 2026-10-17T23:57:30.159Z
-current_date: 2026-10-17T23:57:30.159Z
+access_date: 2026-10-22T19:46:55.248Z
+current_date: 2026-10-22T19:46:55.248Z
 ---
 
 # Custom Providers
@@ -145,6 +145,8 @@ Use native provider authentication when the integration needs stored credentials
 An OAuth provider supplies a display name, login flow, token refresh, and access-token resolution. After registration it appears in `/login`, and Pi stores returned credentials in `~/.pi/agent/auth.json`.
 
 OAuth callbacks are UI-neutral. They can open an authorization URL, show a device code, report progress, request input, or ask the user to choose a login method. Honor cancellation and the supplied abort signal during network requests.
+
+Press Enter (`tui.select.confirm`) to open the device-login URL and copy the code, or log in manually. Providers can disable either action with `openBrowserOnConfirm: false` or `copyCodeOnConfirm: false` in `onDeviceCode` or native `AuthEvent` notifications.
 
 Never write access tokens, refresh tokens, authorization headers, or complete provider responses to ordinary logs.
 
