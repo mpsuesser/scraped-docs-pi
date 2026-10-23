@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/message-types.md
 title: "Message Types"
 description: ""
-access_date: 2026-10-06T15:55:51.871Z
-current_date: 2026-10-06T15:55:51.871Z
+access_date: 2026-10-23T08:58:25.789Z
+current_date: 2026-10-23T08:58:25.789Z
 ---
 
 # Message Types
@@ -148,7 +148,7 @@ interface AssistantMessage {
 }
 ```
 
-`responseModel` records a concrete provider response model when it differs from the requested model. `responseId`, `providerThinkingLevel`, `thinkingLevel`, `diagnostics`, and `rawStopReason` preserve provider or runtime details.
+`responseModel` records the concrete model reported by the provider, when the provider reports one. It may equal the requested model. `responseId`, `providerThinkingLevel`, `thinkingLevel`, `diagnostics`, and `rawStopReason` preserve provider or runtime details.
 
 `"pending"` is used for a partial assistant message while it streams. The completed message in `message_end` has a terminal stop reason, and Pi does not persist `"pending"` assistant messages in session JSONL.
 
