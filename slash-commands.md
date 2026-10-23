@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md
 title: "Slash Commands"
 description: ""
-access_date: 2026-09-22T14:50:05.312Z
-current_date: 2026-09-22T14:50:05.312Z
+access_date: 2026-10-23T15:21:34.736Z
+current_date: 2026-10-23T15:21:34.736Z
 ---
 
 # Slash commands
@@ -54,6 +54,7 @@ Review a session before exporting or sharing it. Sessions can contain prompts, t
 | Command | Description |
 |---|---|
 | `/trust` | Save a project trust decision for future Pi processes |
+| `/mcp` | Manage MCP servers: sign in, reconnect, enable or disable, and change exposure |
 | `/reload` | Reload keybindings, extensions, skills, templates, themes, and context files |
 | `/hotkeys` | Show active keyboard shortcuts |
 | `/changelog` | Show changelog entries |
