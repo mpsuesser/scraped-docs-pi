@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/packages.md
 title: "Packages"
 description: ""
-access_date: 2026-10-28T10:27:46.537Z
-current_date: 2026-10-28T10:27:46.537Z
+access_date: 2026-10-29T20:49:13.646Z
+current_date: 2026-10-29T20:49:13.646Z
 ---
 
 # Pi Packages
@@ -35,6 +35,8 @@ Use `--extension` or `-e` to try a package for one invocation without adding it 
 ```bash
 pi -e npm:@example/pi-tools
 ```
+
+Pi caches `-e` packages under `~/.pi/agent/tmp/extensions/` and checks them on every start and `/reload`. An npm package is reinstalled when the registry has a newer version that matches the specification. A version pinned to an exact number, such as `@1.2.3`, is not checked. A git package is fetched and reset to the remote branch or ref. A ref that is a commit hash already checked out is not fetched. If the check fails or offline mode is on, Pi loads the cached copy.
 
 ## Choose a source
 
