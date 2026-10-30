@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/cli.md
 title: "Cli"
 description: ""
-access_date: 2026-10-30T17:28:01.544Z
-current_date: 2026-10-30T17:28:01.544Z
+access_date: 2026-10-30T21:32:00.023Z
+current_date: 2026-10-30T21:32:00.023Z
 ---
 
 <a id="cli-and-modes-reference"></a>
@@ -289,6 +289,16 @@ Running `pi update` without a target updates Pi itself.
 Add `--force` to reinstall Pi when the selected update includes Pi.
 
 `pi update` cannot update Pi when another package manager provides it, such as Nix. Update Pi with that package manager, for example `nix profile upgrade pi`. Package and model catalog updates still work.
+
+#### Custom update command
+
+If a wrapper or another package manager provides Pi, set `PI_SELF_UPDATE_COMMAND` so `pi update` runs its update command:
+
+```sh
+export PI_SELF_UPDATE_COMMAND="mise use -g npm:{packageName}@{version}"
+```
+
+`pi update` runs it only when pi.dev has a newer release, replacing `{packageName}`, `{version}`, and `{installSpec}` (`{packageName}@{version}`) with that release. The value is split on spaces. For arguments with spaces, use the `selfUpdateCommand` setting in `~/.pi/agent/settings.json` instead, an argv array such as `["nix", "profile", "upgrade", "pi"]`.
 
 ### Aliases and command options
 

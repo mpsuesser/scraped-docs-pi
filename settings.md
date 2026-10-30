@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/settings.md
 title: "Settings"
 description: ""
-access_date: 2026-10-28T10:27:46.537Z
-current_date: 2026-10-28T10:27:46.537Z
+access_date: 2026-10-30T21:32:00.023Z
+current_date: 2026-10-30T21:32:00.023Z
 ---
 
 # Settings Reference
@@ -150,6 +150,7 @@ Keep `retry.provider.maxRetries` at `0` unless provider-level retries are requir
 | `shellPath` | string | Platform default | Custom shell executable path. Supports a leading `~`. |
 | `shellCommandPrefix` | string | None | Prefix prepended to every shell command. |
 | `npmCommand` | `string[]` | `npm` | Command and arguments used for npm package lookup and installation. |
+| `selfUpdateCommand` | `string[]` | None | Command and arguments `pi update` runs to update Pi itself, with `{packageName}`, `{version}`, and `{installSpec}` placeholders. `PI_SELF_UPDATE_COMMAND` takes precedence. **Can only be set in agent-directory settings.** See [Custom update command](cli.md#custom-update-command). |
 
 See [Shell aliases](shell-aliases.md) for shell setup and [Pi Packages](packages.md) for package-manager behavior.
 
