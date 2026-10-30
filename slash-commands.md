@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md
 title: "Slash Commands"
 description: ""
-access_date: 2026-10-23T15:21:34.736Z
-current_date: 2026-10-23T15:21:34.736Z
+access_date: 2026-10-30T17:28:01.544Z
+current_date: 2026-10-30T17:28:01.544Z
 ---
 
 # Slash commands
@@ -29,14 +29,14 @@ Extensions, prompt templates, and skills can add commands. The command menu in P
 | Command | Description |
 |---|---|
 | `/new` | Start a new session |
-| `/resume` | Switch to another saved session |
+| `/resume` | Resume another session |
 | `/name [name]` | Set the session display name, or show the current name when omitted |
 | `/session` | Show current session information and statistics |
 | `/tree` | Navigate the session tree |
 | `/fork` | Create a new session from an earlier user message |
 | `/clone` | Duplicate the current session at its current position |
 | `/compact [instructions]` | Compact the current context, optionally with custom instructions |
-| `/import <path>` | Import and resume a JSONL session |
+| `/import <path>` | Import a JSONL session, preserving its ID and working directory |
 
 ## Export and share
 
