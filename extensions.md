@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-10-30T22:11:40.255Z
-current_date: 2026-10-30T22:11:40.255Z
+access_date: 2026-10-31T16:55:41.000Z
+current_date: 2026-10-31T16:55:41.000Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -3318,7 +3318,6 @@ All examples in [examples/extensions/](https://github.com/earendil-works/pi/blob
 | **Remote & Sandbox** |||
 | `ssh.ts` | SSH remote execution | `registerFlag`, `on("user_bash")`, `on("before_agent_start")`, tool operations |
 | `interactive-shell.ts` | Persistent shell session | `on("user_bash")` |
-| `sandbox/` | Sandboxed tool execution | Tool operations |
 | `gondolin/` | Route built-in tools and `!` commands into a Gondolin micro-VM | Tool operations, built-in tool overrides, `on("user_bash")` |
 | `subagent/` | Spawn sub-agents | `registerTool`, `exec` |
 | **Games** |||
