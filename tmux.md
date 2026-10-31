@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/tmux.md
 title: "Tmux"
 description: ""
-access_date: 2026-10-31T16:35:18.666Z
-current_date: 2026-10-31T16:35:18.666Z
+access_date: 2026-10-31T17:02:13.801Z
+current_date: 2026-10-31T17:02:13.801Z
 ---
 
 # Run Pi in tmux
@@ -62,6 +62,8 @@ Pi supports the xterm `modifyOtherKeys` format used by these versions. Restart t
 
 For older versions, upgrade tmux or use Pi outside tmux rather than relying on modified Enter shortcuts.
 
-## Color codes appear in the editor with tmux 3.6
+## Known issues
 
-If text such as `c0c/0c0c/0c0c` appears in the editor at startup, upgrade tmux to 3.7 or newer. tmux 3.6 sometimes sends the terminal's color replies to Pi as typed text ([tmux#4749](https://github.com/tmux/tmux/issues/4749)). Changing Pi's theme does not help.
+| Issue | Affects | Remedy |
+|---|---|---|
+| Text such as `c0c/0c0c/0c0c` appears in the editor at startup ([tmux#4749](https://github.com/tmux/tmux/issues/4749)) | tmux 3.6 | Upgrade tmux. Changing Pi's theme does not help. |
