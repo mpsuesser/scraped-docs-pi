@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-01T10:16:03.310Z
-current_date: 2026-11-01T10:16:03.310Z
+access_date: 2026-11-03T13:13:22.849Z
+current_date: 2026-11-03T13:13:22.849Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -885,6 +885,8 @@ pi.on("before_provider_request", (event, ctx) => {
 ```
 
 This is mainly useful for debugging provider serialization and cache behavior.
+
+The payload is the full request. Providers that continue from a previous response (OpenAI Codex over WebSocket, Anthropic message threads) may send only the part that is new since the previous request.
 
 #### after_provider_response
 
