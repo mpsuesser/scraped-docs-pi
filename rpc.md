@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/rpc.md
 title: "Rpc"
 description: ""
-access_date: 2026-09-25T13:01:21.889Z
-current_date: 2026-09-25T13:01:21.889Z
+access_date: 2026-11-03T20:32:05.967Z
+current_date: 2026-11-03T20:32:05.967Z
 ---
 
 # RPC Mode
@@ -100,7 +100,7 @@ Clients must also handle child-process startup failures, unexpected exits, stder
 
 Close the child's stdin to request an orderly shutdown. Pi disposes the active runtime before exiting. Clients should still handle process signals and unexpected exits.
 
-An extension can also request shutdown through its extension context. Pi completes shutdown after the current command or after the active run emits `agent_settled`.
+An extension can also request shutdown with `ctx.shutdown()`. If the session is idle and no command is being handled, Pi shuts down right away. Otherwise it shuts down once the current command finishes (for `prompt`, once the prompt settles) or the active run emits `agent_settled`. (A request made while an extension-started compaction is running waits for the next command or run to finish.)
 
 ## Minimal client
 

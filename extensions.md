@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-03T13:13:22.849Z
-current_date: 2026-11-03T13:13:22.849Z
+access_date: 2026-11-03T20:32:05.967Z
+current_date: 2026-11-03T20:32:05.967Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -1269,7 +1269,7 @@ Control flow helpers. `ctx.isIdle()` is false while Pi is processing an agent ru
 Request a graceful shutdown of pi.
 
 - **Interactive mode:** Deferred until the agent becomes idle (after processing all queued steering and follow-up messages).
-- **RPC mode:** Deferred until the next idle state (after completing the current command response, when waiting for the next command).
+- **RPC mode:** Runs right away when the session is idle and no command is being handled. Otherwise deferred until the current command finishes (including its response) or the active run settles. (A request made while an extension-started compaction is running waits for the next command or run to finish.)
 - **Print mode:** No-op. The process exits automatically when all prompts are processed.
 
 Emits `session_shutdown` event to all extensions before exiting. Available in all contexts (event handlers, tools, commands, shortcuts).
