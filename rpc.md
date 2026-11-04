@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/rpc.md
 title: "Rpc"
 description: ""
-access_date: 2026-11-03T21:25:46.430Z
-current_date: 2026-11-03T21:25:46.430Z
+access_date: 2026-11-04T23:33:27.459Z
+current_date: 2026-11-04T23:33:27.459Z
 ---
 
 # RPC Mode
@@ -98,7 +98,7 @@ Clients must also handle child-process startup failures, unexpected exits, stder
 
 ## Shutdown
 
-Close the child's stdin to request an orderly shutdown. Pi disposes the active runtime before exiting. Clients should still handle process signals and unexpected exits.
+Close the child's stdin to request an orderly shutdown. Pi disposes the active runtime and waits for pending work to finish before exiting, so give it time to exit before killing it. Clients should still handle process signals and unexpected exits.
 
 SIGTERM and SIGHUP also start an orderly shutdown. Once a shutdown has started, from either stdin EOF or a signal, a stdin EOF or a single signal does not interrupt it; a second signal exits at once. Closing stdin and sending SIGTERM together is safe.
 
