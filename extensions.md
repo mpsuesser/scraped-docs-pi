@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-03T22:46:29.526Z
-current_date: 2026-11-03T22:46:29.526Z
+access_date: 2026-11-04T22:19:54.514Z
+current_date: 2026-11-04T22:19:54.514Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -2421,6 +2421,8 @@ pi.registerTool({
   },
 });
 ```
+
+`ReadOperations.createReadStream` is optional. When it returns the file as an async iterable of chunks (a Node `Readable` works), `read` keeps only the lines it shows in memory, so large files can be read with `offset`/`limit`; without it, `read` loads the whole file through `readFile`.
 
 The `create*ToolDefinition()` factories, such as `createReadToolDefinition()`, return complete tool definitions, including the built-in prompt snippet and guidelines, for the same purpose. Rendering does not need copying: a tool registered under a built-in name inherits the built-in renderer for each slot it leaves out (see [Overriding Built-in Tools](#overriding-built-in-tools)).
 
