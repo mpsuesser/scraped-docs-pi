@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models-configuration.md
 title: "Models Configuration"
 description: ""
-access_date: 2026-11-04T11:26:05.424Z
-current_date: 2026-11-04T11:26:05.424Z
+access_date: 2026-11-06T19:52:22.588Z
+current_date: 2026-11-06T19:52:22.588Z
 ---
 
 # Models Configuration
@@ -127,6 +127,7 @@ See [Describe model input and caching](models.md#describe-model-input-and-cachin
 | `requiresToolResultName` | boolean |  | Whether tool results require the name field. Default: auto-detected from URL. |
 | `requiresAssistantAfterToolResult` | boolean |  | Whether a user message after tool results requires an assistant message in between. Default: auto-detected from URL. |
 | `requiresNonNullAssistantContent` | boolean |  | Whether replayed assistant messages with no text (e.g. tool-call-only messages) must send "" instead of null content. Default: false. |
+| `requiresToolsWithToolHistory` | boolean |  | Whether requests without tools must send "tools": [] when the conversation contains tool calls or tool results. Needed by some proxies in front of Anthropic, such as older LiteLLM versions. Default: false, the field is omitted. |
 | `requiresThinkingAsText` | boolean |  | Whether thinking blocks must be converted to text blocks with &lt;thinking> delimiters. Default: auto-detected from URL. |
 | `requiresReasoningContentOnAssistantMessages` | boolean |  | Whether all replayed assistant messages must include an empty reasoning_content field when reasoning is enabled. Default: auto-detected from URL. |
 | `thinkingFormat` | `"openai" \| "openrouter" \| "deepseek" \| "together" \| "baseten" \| "zai" \| "qwen" \| "chat-template" \| "qwen-chat-template" \| "string-thinking" \| "ant-ling"` |  | Format for reasoning or thinking parameters. When omitted, Pi auto-detects the format from the provider URL. "openai" uses reasoning_effort, "openrouter" uses reasoning.effort, "deepseek" uses thinking.type plus reasoning_effort when supported, "together" uses reasoning.enabled plus reasoning_effort when supported, "baseten" uses configurable chat_template_args plus reasoning_effort when supported, "zai" uses thinking.type, "qwen" uses top-level enable_thinking, "qwen-chat-template" uses chat_template_kwargs.enable_thinking and preserve_thinking, "chat-template" uses configurable chat_template_kwargs, "string-thinking" uses top-level thinking, and "ant-ling" uses reasoning.effort only when the mapped effort is non-null. |
