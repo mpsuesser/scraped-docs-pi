@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/llama-cpp.md
 title: "Llama Cpp"
 description: ""
-access_date: 2026-11-04T11:26:05.424Z
-current_date: 2026-11-04T11:26:05.424Z
+access_date: 2026-11-10T10:15:13.718Z
+current_date: 2026-11-10T10:15:13.718Z
 ---
 
 # Local Models with llama.cpp
@@ -21,7 +21,7 @@ curl -LsSf https://llama.app/install.sh | sh
 Verify the installation:
 
 ```bash
-llama cli --version
+llama --version
 ```
 
 See [llama.app](https://llama.app) for other installation methods, including package managers and building from source.
