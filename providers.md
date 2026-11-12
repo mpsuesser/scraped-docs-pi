@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/providers.md
 title: "Providers"
 description: ""
-access_date: 2026-11-04T11:26:05.424Z
-current_date: 2026-11-04T11:26:05.424Z
+access_date: 2026-11-12T22:51:35.866Z
+current_date: 2026-11-12T22:51:35.866Z
 ---
 
 # Providers
@@ -65,8 +65,10 @@ This table covers providers with a single primary API-key variable. Providers th
 | MiniMax | `MINIMAX_API_KEY` |
 | MiniMax (China) | `MINIMAX_CN_API_KEY` |
 | Moonshot AI (Global and China) | `MOONSHOT_API_KEY` |
-| Qwen Token Plan and Individual | `QWEN_TOKEN_PLAN_API_KEY` |
-| Qwen Token Plan (China) and Individual (China) | `QWEN_TOKEN_PLAN_CN_API_KEY` |
+| Qwen Token Plan Team | `QWEN_TOKEN_PLAN_TEAM_API_KEY` |
+| Qwen Token Plan Team (China) | `QWEN_TOKEN_PLAN_TEAM_CN_API_KEY` |
+| Qwen Token Plan Individual | `QWEN_TOKEN_PLAN_INDIVIDUAL_API_KEY` |
+| Qwen Token Plan Individual (China) | `QWEN_TOKEN_PLAN_INDIVIDUAL_CN_API_KEY` |
 | Xiaomi MiMo | `XIAOMI_API_KEY` |
 | Xiaomi MiMo Token Plan (China) | `XIAOMI_TOKEN_PLAN_CN_API_KEY` |
 | Xiaomi MiMo Token Plan (Amsterdam) | `XIAOMI_TOKEN_PLAN_AMS_API_KEY` |
