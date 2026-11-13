@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/rpc-commands.md
 title: "Rpc Commands"
 description: ""
-access_date: 2026-09-25T13:01:21.889Z
-current_date: 2026-09-25T13:01:21.889Z
+access_date: 2026-11-13T10:37:59.091Z
+current_date: 2026-11-13T10:37:59.091Z
 ---
 
 # RPC Commands
@@ -754,7 +754,7 @@ Response:
 
 ### get_last_assistant_text
 
-Get the text content of the last assistant message.
+Get the text content of the last assistant message. Messages without text from an aborted or failed turn, or that only call tools, are skipped.
 
 ```json
 {"type": "get_last_assistant_text"}
