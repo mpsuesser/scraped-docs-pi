@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/tui.md
 title: "Tui"
 description: ""
-access_date: 2026-11-05T22:24:36.056Z
-current_date: 2026-11-05T22:24:36.056Z
+access_date: 2026-11-16T22:25:48.939Z
+current_date: 2026-11-16T22:25:48.939Z
 ---
 
 # Terminal UI
@@ -28,6 +28,8 @@ These APIs receive Pi’s active theme and keybindings where needed. Do not crea
 ## Understand the component model
 
 A component renders an array of terminal lines for an available width. It can optionally handle keyboard and mouse input, and it must invalidate cached output when its state or theme-dependent content changes.
+
+Treat lines returned by `render()` as read-only, including `super.render()` in a subclass. Built-in components such as `Container`, `Box`, `Text`, and `Markdown` return the same cached array while nothing changed, so modifying it in place corrupts later frames. Copy first, for example `const lines = [...super.render(width)]`, and cache the result if it is expensive. Return a new array when your output changes: parents reuse an unchanged array without reading it again.
 
 Every rendered line must fit within the supplied width. Measure visible terminal columns rather than string length because ANSI escapes, wide characters, emoji, and combining characters change display width.
 
