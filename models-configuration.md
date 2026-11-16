@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models-configuration.md
 title: "Models Configuration"
 description: ""
-access_date: 2026-11-11T08:55:21.894Z
-current_date: 2026-11-11T08:55:21.894Z
+access_date: 2026-11-16T09:42:45.891Z
+current_date: 2026-11-16T09:42:45.891Z
 ---
 
 # Models Configuration
@@ -198,6 +198,7 @@ Also applies to `azure-openai-responses` and `openai-codex-responses`.
 | Field | Type | Default | Description |
 |---|---|---|---|
 | `supportsMidConvoSystemMessages` | boolean | `false` | Whether the exact model accepts system messages after the conversation has started. When false, later system messages are folded into the leading system message. |
+| `supportsStrictMode` | boolean | `false` | Whether the model supports strict (schema-constrained) function tools. |
 
 ### `typesafe-system-one`
 
