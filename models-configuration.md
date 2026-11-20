@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models-configuration.md
 title: "Models Configuration"
 description: ""
-access_date: 2026-11-20T06:54:55.570Z
-current_date: 2026-11-20T06:54:55.570Z
+access_date: 2026-11-20T08:32:43.769Z
+current_date: 2026-11-20T08:32:43.769Z
 ---
 
 # Models Configuration
@@ -119,7 +119,7 @@ See [Describe model input and caching](models.md#describe-model-input-and-cachin
 | Field | Type | Default | Description |
 |---|---|---|---|
 | `supportsStore` | boolean |  | Whether the provider supports the store field. Default: auto-detected from URL. |
-| `supportsDeveloperRole` | boolean |  | Whether the provider supports the developer role instead of system. Default: auto-detected from URL. |
+| `supportsDeveloperRole` | boolean |  | Whether to send system messages of reasoning models (the system prompt and mid-conversation system messages) with the developer role instead of system. Default: true only for api.openai.com. |
 | `supportsReasoningEffort` | boolean |  | Whether the provider supports reasoning_effort. Default: auto-detected from URL. |
 | `supportsUsageInStreaming` | boolean | `true` | Whether the provider supports stream_options.include_usage for token usage in streaming responses. |
 | `supportsFinishReason` | boolean | `true` | Whether streamed responses include finish_reason. When false, pi infers stop or toolUse when the stream ends. |
