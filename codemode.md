@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-10-20T18:53:23.538Z
-current_date: 2026-10-20T18:53:23.538Z
+access_date: 2026-11-23T23:11:17.021Z
+current_date: 2026-11-23T23:11:17.021Z
 ---
 
 # Codemode
@@ -48,7 +48,7 @@ Every tool the session can call is a method of `tools`, named by its identifier:
 
 What a call resolves to depends on the tool:
 
-- Tools with an output schema resolve to a structured value. `bash` resolves to `{ output, truncated, full_output_path?, exit_code, wall_time_seconds }`, also for non-zero exit codes. Its `output` is not limited to the 2000 lines or 50KB the model sees: it holds up to 1 MiB, and longer output keeps its first and last 512 KiB around an omission marker, with `truncated` set and the full output in `full_output_path`.
+- Tools with an output schema resolve to a structured value. `bash` resolves to `{ output, truncated, full_output_path?, full_output_error?, exit_code, wall_time_seconds }`, also for non-zero exit codes. Its `output` is not limited to the 2000 lines or 50KB the model sees: it holds up to 1 MiB, and longer output keeps its first and last 512 KiB around an omission marker, with `truncated` set and the full output in `full_output_path`. When the full output could not be saved (for example a full temp directory), `full_output_error` says why and `output` holds only the retained tail.
 - MCP tools resolve to their `CallToolResult`, including `isError` and `structuredContent`.
 - `read` resolves to the file's text, or for an image to an image block `{ type: "image", data, mimeType, note }` that `image()` shows. `data` is the base64 image the model would see and `note` the text that goes with it, such as resize hints.
 - Other tools, such as `edit` and `write`, resolve to their text output.

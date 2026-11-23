@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/message-types.md
 title: "Message Types"
 description: ""
-access_date: 2026-10-23T08:58:25.789Z
-current_date: 2026-10-23T08:58:25.789Z
+access_date: 2026-11-23T23:11:17.021Z
+current_date: 2026-11-23T23:11:17.021Z
 ---
 
 # Message Types
@@ -218,6 +218,7 @@ interface BashExecutionMessage {
   cancelled: boolean;
   truncated: boolean;
   fullOutputPath?: string;
+  fullOutputError?: string; // why the full output could not be saved, when truncated
   excludeFromContext?: boolean;
   timestamp: number;
 }

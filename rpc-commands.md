@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/rpc-commands.md
 title: "Rpc Commands"
 description: ""
-access_date: 2026-11-13T10:37:59.091Z
-current_date: 2026-11-13T10:37:59.091Z
+access_date: 2026-11-23T23:11:17.021Z
+current_date: 2026-11-23T23:11:17.021Z
 ---
 
 # RPC Commands
@@ -482,7 +482,7 @@ Response:
 }
 ```
 
-If output was truncated, includes `fullOutputPath`:
+If output was truncated, includes `fullOutputPath`, or `fullOutputError` with the reason when the full output could not be saved (for example a full temp directory):
 ```json
 {
   "type": "response",
