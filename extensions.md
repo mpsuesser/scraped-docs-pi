@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-24T23:24:52.421Z
-current_date: 2026-11-24T23:24:52.421Z
+access_date: 2026-11-24T23:38:53.418Z
+current_date: 2026-11-24T23:38:53.418Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -902,7 +902,7 @@ pi.on("after_provider_response", (event, ctx) => {
 });
 ```
 
-Coverage depends on provider and transport. Some providers report empty headers or only some responses. Errors that arrive inside an already started stream and WebSocket transports do not fire this event; use `provider_stream_event` to observe them.
+Coverage depends on provider and transport. Some providers report empty headers or only some responses. It does not fire for errors that arrive inside an already started SSE stream, or for WebSocket transports, including a WebSocket connection that fails to open.
 
 #### provider_stream_event
 
