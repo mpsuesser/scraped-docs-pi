@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-11-23T23:11:17.021Z
-current_date: 2026-11-23T23:11:17.021Z
+access_date: 2026-11-24T14:36:36.366Z
+current_date: 2026-11-24T14:36:36.366Z
 ---
 
 # Codemode
@@ -128,6 +128,8 @@ interface ClassifierResult {
   /** Answers by question ID. */
   answers: Record<string, ClassifierAnswer>;
   usage?: ModelUsage;
+  /** Provider-specific response ID when reported, such as OpenRouter's generation ID. */
+  responseId?: string;
   stopReason: "stop" | "error" | "aborted";
   errorMessage?: string;
 }
