@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-24T20:08:16.811Z
-current_date: 2026-11-24T20:08:16.811Z
+access_date: 2026-11-24T23:24:52.421Z
+current_date: 2026-11-24T23:24:52.421Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -363,7 +363,7 @@ The model request runs these hooks in order:
 2. `context_with_system` (can modify the full transcript)
 3. `before_provider_headers` (can mutate headers)
 4. `before_provider_request` (can inspect or replace the payload)
-5. `after_provider_response` (status and headers, before the stream is consumed)
+5. `after_provider_response` (status and headers of each HTTP response, including errors and retried attempts; successful responses fire before their stream is consumed)
 6. `provider_stream_event` (raw parsed stream events) and `message_start` / `message_update` / `message_end` for the assistant message
 
 A tool call that executes runs these hooks in order:
@@ -890,7 +890,7 @@ The payload is the full request. Providers that continue from a previous respons
 
 #### after_provider_response
 
-Fired after an HTTP response is received and before its stream body is consumed. Handlers run in extension load order.
+Fired for each HTTP response the provider receives, including error responses (4xx/5xx) and responses to retried attempts, so one request can fire it more than once. Successful responses fire before their stream body is consumed. Handlers run in extension load order.
 
 ```typescript
 pi.on("after_provider_response", (event, ctx) => {
@@ -902,7 +902,7 @@ pi.on("after_provider_response", (event, ctx) => {
 });
 ```
 
-Header availability depends on provider and transport. Providers that abstract HTTP responses may not expose headers.
+Coverage depends on provider and transport. Some providers report empty headers or only some responses. Errors that arrive inside an already started stream and WebSocket transports do not fire this event; use `provider_stream_event` to observe them.
 
 #### provider_stream_event
 
