@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-12T13:18:28.511Z
-current_date: 2026-11-12T13:18:28.511Z
+access_date: 2026-11-24T20:08:16.811Z
+current_date: 2026-11-24T20:08:16.811Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -2895,6 +2895,16 @@ if (confirmed) {
 ```
 
 See [examples/extensions/timed-confirm.ts](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/examples/extensions/timed-confirm.ts) for complete examples.
+
+#### Program Status Kind
+
+While a dialog waits, terminals that support [program status](terminal-setup.md#program-status) show pi as blocked, with the first line of the title as the message. `confirm()` reports `"permission"`, `select()` and `input()` report `"question"`. Pass `blockedKind` when the dialog asks for something else, for example a select that approves an action:
+
+```typescript
+const choice = await ctx.ui.select("Deploy to production?", ["Deploy", "Deploy and tag", "Cancel"], {
+  blockedKind: "permission", // "permission" | "question" | "auth"
+});
+```
 
 ### Widgets, Status, and Footer
 
