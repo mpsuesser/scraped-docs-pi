@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/extensions.md
 title: "Extensions"
 description: ""
-access_date: 2026-11-24T23:38:53.418Z
-current_date: 2026-11-24T23:38:53.418Z
+access_date: 2026-11-25T08:01:14.704Z
+current_date: 2026-11-25T08:01:14.704Z
 ---
 
 > Pi can create extensions. Ask it to build one for your use case.
@@ -1233,7 +1233,7 @@ Use `ctx.modelRegistry.streamSimple(model, context, options)` for provider-neutr
 
 `streamSimple()` returns an `AssistantMessageEventStream`. Iterate it for response events and await `.result()` for the final message. Setup failures produce error events and error results.
 
-For non-chat models, `findOfType()`, `getModelsOfType()`, `getAvailableOfType()`, and `getModelOfType()` look up image and classifier models, and `classify()` and `generateImages()` call them. See [Use classifier models](models.md#use-classifier-models) and [Use image models](models.md#use-image-models).
+For non-chat models, `findOfType()`, `getModelsOfType()`, `getAvailableOfType()`, and `getModelOfType()` look up image and decision (`"classifier"`) models, and `classify()` and `generateImages()` call them. See [Use decision models](models.md#use-decision-models) and [Use image models](models.md#use-image-models).
 
 ### ctx.signal
 
