@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models-configuration.md
 title: "Models Configuration"
 description: ""
-access_date: 2026-11-25T21:02:30.972Z
-current_date: 2026-11-25T21:02:30.972Z
+access_date: 2026-11-25T22:37:32.489Z
+current_date: 2026-11-25T22:37:32.489Z
 ---
 
 # Models Configuration
@@ -192,6 +192,7 @@ Also applies to `azure-openai-responses` and `openai-codex-responses`.
 | Field | Type | Default | Description |
 |---|---|---|---|
 | `supportsStrictMode` | boolean | `false` | Whether the model supports Bedrock strict tool schemas. |
+| `supportsReasoningReplay` | boolean | `true` | Whether the model accepts reasoning blocks from earlier assistant messages. When false, earlier reasoning is not sent back. The generated catalog disables this for Kimi K3 models, which fail on Converse when it is sent. |
 
 ### `mistral-conversations`
 
