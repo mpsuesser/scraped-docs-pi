@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/environment-variables.md
 title: "Environment Variables"
 description: ""
-access_date: 2026-11-26T13:52:56.372Z
-current_date: 2026-11-26T13:52:56.372Z
+access_date: 2026-11-26T22:52:56.958Z
+current_date: 2026-11-26T22:52:56.958Z
 ---
 
 # Environment Variables
@@ -86,7 +86,7 @@ These variables are read by Pi itself:
 
 | Variable | Description |
 |----------|-------------|
-| `PI_CODING_AGENT_DIR` | Override the config directory; default is `~/.pi/agent` |
+| `PI_CODING_AGENT_DIR` | Override the config directory; default is `~/.pi/agent`; overridden by `--agent-dir` |
 | `PI_CODING_AGENT_SESSION_DIR` | Override session storage; overridden by `--session-dir` |
 | `PI_PACKAGE_DIR` | Override the package directory, useful for Nix/Guix store paths |
 | `PI_OFFLINE` | Disable automatic startup network requests to `pi.dev`, including both latest-version checks and model catalog refreshes |

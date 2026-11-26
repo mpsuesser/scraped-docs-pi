@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/cli.md
 title: "Cli"
 description: ""
-access_date: 2026-11-25T08:01:14.704Z
-current_date: 2026-11-25T08:01:14.704Z
+access_date: 2026-11-26T22:52:56.958Z
+current_date: 2026-11-26T22:52:56.958Z
 ---
 
 <a id="cli-and-modes-reference"></a>
@@ -105,6 +105,8 @@ See [Sessions and Context](sessions.md) for resuming, forking, naming, and stori
   Forks a session, chosen by file path or full/partial ID, into a new session in the current directory.
 - `--session-dir <dir>`<br>
   Overrides storage and lookup. It takes precedence over `PI_CODING_AGENT_SESSION_DIR` and the `sessionDir` setting.
+- `--agent-dir <dir>`<br>
+  Uses `<dir>` as the config directory (settings, auth, models, resources, and the default session storage) instead of `~/.pi/agent`. It takes precedence over `PI_CODING_AGENT_DIR` and is passed on to processes Pi starts. Works with subcommands too, such as `pi --agent-dir <dir> install <source>`.
 - `--no-session`<br>
   Uses an in-memory session that is not persisted.
 - `-n`, `--name <name>`<br>
