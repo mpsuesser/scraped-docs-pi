@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/settings.md
 title: "Settings"
 description: ""
-access_date: 2026-11-25T11:15:35.994Z
-current_date: 2026-11-25T11:15:35.994Z
+access_date: 2026-11-26T12:34:42.302Z
+current_date: 2026-11-26T12:34:42.302Z
 ---
 
 # Settings Reference
@@ -175,6 +175,8 @@ Resource arrays support glob exclusions with `!pattern`, exact inclusion with `+
 The built-in extensions are named `builtin:mcp`, `builtin:llama.cpp`, `builtin:codemode`, and `builtin:tool-search` in `extensions`. They load by default; `-builtin:mcp` disables one. A `+builtin:<name>` or `-builtin:<name>` entry in project settings overrides the user setting. `pi config` lists them under Built-in. `--no-extensions` disables them too, and `-e builtin:<name>` loads one explicitly.
 
 ## Updates, telemetry, and warnings
+
+For what Pi sends and how to turn it off, see [Telemetry](telemetry.md).
 
 | Setting | Type | Default | Description |
 |---|---|---|---|
