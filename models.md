@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models.md
 title: "Models"
 description: ""
-access_date: 2026-11-25T08:01:14.704Z
-current_date: 2026-11-25T08:01:14.704Z
+access_date: 2026-11-26T14:28:58.565Z
+current_date: 2026-11-26T14:28:58.565Z
 ---
 
 # Choose a Model
@@ -214,13 +214,15 @@ Extensions call decision models through `ctx.modelRegistry.classify()`, without 
 
 Image models generate images from a prompt and optional input images. Pi lists OpenRouter's image models, such as `google/gemini-2.5-flash-image` and `black-forest-labs/flux.2-pro`, under the `openrouter` provider; they use the same `OPENROUTER_API_KEY` or `/login` credential as its chat models.
 
-Like decision models, image models do not appear in `/model`; the model reaches them through the [`codemode`](cli.md#enable-codemode) tool. Scripts list them with `models.getAvailableOfType("image")` and call `models.generateImages(model, { input })`. The result's `output` holds base64 image blocks, which `image()` attaches to the `codemode` result so the model sees them:
+Like decision models, image models do not appear in `/model`; the model reaches them through the [`codemode`](cli.md#enable-codemode) tool. Scripts list them with `models.getAvailableOfType("image")` and call `models.generateImages(model, { input }, options?)`. The result's `output` holds base64 image blocks, which `image()` attaches to the `codemode` result so the model sees them:
 
 ```js
 const painter = await models.getModelOfType("image", "openrouter", "google/gemini-2.5-flash-image");
-const result = await models.generateImages(painter, {
-  input: [{ type: "text", text: "A red fox in the snow, watercolor" }],
-});
+const result = await models.generateImages(
+  painter,
+  { input: [{ type: "text", text: "A red fox in the snow, watercolor" }] },
+  { aspectRatio: "16:9", size: "2K" },
+);
 if (result.stopReason !== "stop") return result.errorMessage;
 for (const block of result.output) if (block.type === "image") image(block);
 ```

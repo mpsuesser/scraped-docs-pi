@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/codemode.md
 title: "Codemode"
 description: ""
-access_date: 2026-11-25T08:01:14.704Z
-current_date: 2026-11-25T08:01:14.704Z
+access_date: 2026-11-26T14:28:58.565Z
+current_date: 2026-11-26T14:28:58.565Z
 ---
 
 # Codemode
@@ -94,7 +94,7 @@ declare const models: {
   /** Answer `context.questions` about `context.state`; answers are in `result.answers` by question ID. */
   classify(model: ModelInfo, context: ClassifierContext): Promise<ClassifierResult>;
   /** Generate images from `context.input` text and image blocks; show `result.output` blocks with image(). Can take minutes. */
-  generateImages(model: ModelInfo, context: ImagesContext): Promise<ImagesResult>;
+  generateImages(model: ModelInfo, context: ImagesContext, options?: ImagesOptions): Promise<ImagesResult>;
 };
 ```
 
@@ -201,6 +201,13 @@ interface ImagesContext {
   input: (TextBlock | ImageBlock)[];
 }
 
+interface ImagesOptions {
+  /** Desired aspect ratio, e.g. `"1:1"`, `"16:9"`, `"4:3"`, `"9:16"`. */
+  aspectRatio?: string;
+  /** Desired resolution: `"1K"`, `"2K"` or `"4K"`. Pixel dimensions such as `"1024x1536"` are not supported. */
+  size?: string;
+}
+
 interface ImagesResult {
   provider: string;
   model: string;
@@ -215,6 +222,8 @@ type TextBlock = { type: "text"; text: string };
 /** `data` is base64. */
 type ImageBlock = { type: "image"; data: string; mimeType: string };
 ```
+
+Options go to the provider unchanged. Which values work depends on the model; the provider may answer an unsupported value with an error result. Other option keys throw.
 
 Show generated images with `image(block)`. Do not print `data` with `text()`, `console`, or `return`: it is large and the model cannot read it as text. `image()` also saves each image to a temp file and puts its path in the result, so a later turn can copy or move the file.
 
