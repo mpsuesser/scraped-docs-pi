@@ -2,8 +2,8 @@
 url: https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/models.md
 title: "Models"
 description: ""
-access_date: 2026-11-26T14:28:58.565Z
-current_date: 2026-11-26T14:28:58.565Z
+access_date: 2026-11-27T08:59:28.916Z
+current_date: 2026-11-27T08:59:28.916Z
 ---
 
 # Choose a Model
@@ -212,7 +212,7 @@ Extensions call decision models through `ctx.modelRegistry.classify()`, without 
 
 ## Use image models
 
-Image models generate images from a prompt and optional input images. Pi lists OpenRouter's image models, such as `google/gemini-2.5-flash-image` and `black-forest-labs/flux.2-pro`, under the `openrouter` provider; they use the same `OPENROUTER_API_KEY` or `/login` credential as its chat models.
+Image models generate images from a prompt and optional input images. Pi lists image models from OpenRouter (such as `google/gemini-2.5-flash-image` and `black-forest-labs/flux.2-pro`) and Radius (when enabled for the organization); each uses the same API key or `/login` credential as its chat models.
 
 Like decision models, image models do not appear in `/model`; the model reaches them through the [`codemode`](cli.md#enable-codemode) tool. Scripts list them with `models.getAvailableOfType("image")` and call `models.generateImages(model, { input }, options?)`. The result's `output` holds base64 image blocks, which `image()` attaches to the `codemode` result so the model sees them:
 
